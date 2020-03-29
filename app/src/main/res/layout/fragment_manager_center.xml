@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener"/>
+
+        <variable
+            name="viewModel"
+            type="com.proton.carepatchtemp.viewmodel.managecenter.ManageCenterViewModel"/>
+
+        <import type="com.proton.carepatchtemp.BuildConfig"/>
+
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/id_top_layout"
+            layout="@layout/include_measure_top"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_main_bg">
+
+            <LinearLayout
+                android:id="@+id/ll_settings"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@drawable/divider_item_layout_1dp"
+                android:orientation="vertical"
+                android:showDividers="middle">
+                <!--用户登录状态-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:layout_marginTop="1px"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="13dp"
+                    android:paddingRight="18dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/icon_default_head"/>
+
+                    <com.proton.carepatchtemp.view.EllipsizeTextView
+                        android:id="@+id/id_tv_login_userName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        app:ellipsize_maxLength="13"
+                        app:ellipsize_textColor="#343434"
+                        app:ellipsize_textSize="16sp"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/id_tv_login_operation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_radius5dp_blue30"
+                        android:onClick="@{(view)->clickListener.onClick(view)}"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="6dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="6dp"
+                        android:text="@string/string_go_to_login"
+                        android:textColor="@color/color_main"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+                <!--单位设置-->
+                <LinearLayout
+                    android:id="@+id/lay_unit_set"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/btn_click_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/item_layout_left_margin"
+                    android:paddingRight="@dimen/item_layout_right_margin">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="23dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="14dp"
+                            android:src="@drawable/icon_tempunit_set"/>
+
+                        <TextView
+                            style="@style/style_16sp_gray34"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:text="@string/string_temp_unit"/>
+                        <!--  <ImageView
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:src="@mipmap/setting_temp_unit"/>
+
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_gravity="center_vertical"
+                              android:layout_marginLeft="16dp"
+                              android:gravity="center_vertical"
+                              android:maxLines="1"
+                              android:text="@string/Tempunit"
+                              android:textColor="#343434"
+                              android:textSize="14sp"/>-->
+                    </LinearLayout>
+                    <!--温度选择-->
+                    <RadioGroup
+                        android:id="@+id/id_rg_temp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/id_rb_temp_c"
+                            style="@style/style_rb_managecenter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@={viewModel.isCTempChoose}"
+                            android:drawableLeft="@drawable/selector_rb_tempchoose"
+                            android:drawablePadding="8dp"
+                            android:text="@string/string_temp_C"/>
+
+                        <RadioButton
+                            android:id="@+id/id_rb_temp_F"
+                            style="@style/style_rb_managecenter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:checked="@={viewModel.isFTempChoose}"
+                            android:drawableLeft="@drawable/selector_rb_tempchoose"
+                            android:drawablePadding="8dp"
+                            android:text="@string/string_temp_F"/>
+                    </RadioGroup>
+                </LinearLayout>
+                <!--消息设置-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/lay_msg_setting"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/btn_height"
+                        android:background="@drawable/btn_click_bg"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/item_layout_left_margin"
+                        android:paddingRight="@dimen/item_layout_right_margin">
+
+                        <ImageView
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:layout_marginRight="14dp"
+                            android:src="@drawable/icon_setting_msg"/>
+
+                        <TextView
+                            android:id="@+id/tv_msg_set"
+                            style="@style/style_16sp_gray34"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:onClick="@{(view)->clickListener.onClick(view)}"
+                            android:text="@string/string_msg_set"/>
+
+                        <ImageView
+                            android:id="@+id/iv_msgset_down"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:onClick="@{(view)->clickListener.onClick(view)}"
+                            android:src="@drawable/icon_setarrow_off"/>
+
+                    </LinearLayout>
+                    <!--消息设置展开布局-->
+                    <ViewStub
+                        android:id="@+id/id_vs_msg_set"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:layout="@layout/viewstub_msg_set_open"/>
+                </LinearLayout>
+                <!--消息中心-->
+                <LinearLayout
+                    android:id="@+id/id_lay_msg_center"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/btn_height"
+                    android:background="@drawable/btn_click_bg"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(view)->clickListener.onClick(view)}"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/item_layout_left_margin"
+                    android:paddingRight="@dimen/item_layout_right_margin"
+                    android:visibility="@{BuildConfig.IS_INTERNAL ? View.GONE : View.VISIBLE}">
+
+                    <ImageView
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@drawable/icon_msg_tag"/>
+
+                    <TextView
+                        android:id="@+id/id_tv_msg_set"
+                        style="@style/style_16sp_gray34"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/string_message_center"/>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/icon_setarrow_right"/>
+
+                </LinearLayout>
+                <!--清除缓存-->
+                <LinearLayout
+                    android:id="@+id/lay_clear_cache"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/btn_click_bg"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(view)->clickListener.onClick(view)}"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/item_layout_left_margin"
+                    android:paddingRight="@dimen/item_layout_right_margin">
+
+                    <ImageView
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@drawable/icon_clear_cache"/>
+
+                    <TextView
+                        style="@style/style_16sp_gray34"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/string_clear_cache"/>
+
+                    <TextView
+                        android:id="@+id/id_tv_cachesize"
+                        style="@style/style_14sp_gray7f"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|right"
+                        android:text="0kb"/>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/icon_setarrow_right"/>
+
+                </LinearLayout>
+                <!---帮助-->
+                <LinearLayout
+                    android:id="@+id/lay_set_help"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/btn_height"
+                    android:background="@drawable/btn_click_bg"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(view)->clickListener.onClick(view)}"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/item_layout_left_margin"
+                    android:paddingRight="@dimen/item_layout_right_margin">
+
+                    <ImageView
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@drawable/icon_set_help"/>
+
+                    <TextView
+                        android:id="@+id/tv_help"
+                        style="@style/style_16sp_gray34"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/string_help"/>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/icon_setarrow_right"/>
+
+                </LinearLayout>
+                <!--注意事项-->
+                <LinearLayout
+                    android:id="@+id/lay_intention"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/btn_height"
+                    android:background="@drawable/btn_click_bg"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(view)->clickListener.onClick(view)}"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/item_layout_left_margin"
+                    android:paddingRight="@dimen/item_layout_right_margin"
+                    android:visibility="@{BuildConfig.IS_INTERNAL ? View.GONE : View.VISIBLE}">
+
+                    <ImageView
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@drawable/icon_attention"/>
+
+                    <TextView
+                        android:id="@+id/tv_intention"
+                        style="@style/style_16sp_gray34"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/string_intention"/>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/icon_setarrow_right"/>
+
+                </LinearLayout>
+                <!--关于质子-->
+                <LinearLayout
+                    android:id="@+id/lay_about_proton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/btn_height"
+                    android:background="@drawable/btn_click_bg"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(view)->clickListener.onClick(view)}"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/item_layout_left_margin"
+                    android:paddingRight="@dimen/item_layout_right_margin">
+
+                    <ImageView
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@drawable/icon__about_proton"/>
+
+                    <TextView
+                        android:id="@+id/tv_about_zz"
+                        style="@style/style_16sp_gray34"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/string_about_proton"/>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/icon_setarrow_right"/>
+
+                </LinearLayout>
+                <!--用户QQ群-->
+                <LinearLayout
+                    android:id="@+id/lay_userqq_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/btn_height"
+                    android:background="@drawable/btn_click_bg"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(view)->clickListener.onClick(view)}"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/item_layout_left_margin"
+                    android:paddingRight="@dimen/item_layout_right_margin"
+                    android:visibility="@{BuildConfig.IS_INTERNAL ? View.GONE : View.VISIBLE}">
+
+                    <ImageView
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@drawable/icon_qq_group"/>
+
+                    <TextView
+                        android:id="@+id/tv_users_qq"
+                        style="@style/style_16sp_gray34"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/string_userqq_group"/>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/icon_setarrow_right"/>
+
+                </LinearLayout>
+                <!---意见反馈-->
+                <LinearLayout
+                    android:id="@+id/lay_feedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/btn_height"
+                    android:background="@drawable/btn_click_bg"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(view)->clickListener.onClick(view)}"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/item_layout_left_margin"
+                    android:paddingRight="@dimen/item_layout_right_margin">
+
+                    <ImageView
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@drawable/icon_feedback"/>
+
+                    <TextView
+                        android:id="@+id/tv_feedback"
+                        style="@style/style_16sp_gray34"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/string_feedback"/>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/icon_setarrow_right"/>
+
+                </LinearLayout>
+
+                <!--用户QQ群-->
+                <LinearLayout
+                    android:id="@+id/id_check_update"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/btn_height"
+                    android:background="@drawable/btn_click_bg"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(view)->clickListener.onClick(view)}"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/item_layout_left_margin"
+                    android:paddingRight="@dimen/item_layout_right_margin"
+                    android:visibility="@{BuildConfig.IS_INTERNAL ? View.GONE : View.VISIBLE}">
+
+                    <ImageView
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@drawable/icon_update"/>
+
+                    <TextView
+                        style="@style/style_16sp_gray34"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/string_check_update"/>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/icon_setarrow_right"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/id_account_safe"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/btn_height"
+                    android:background="@drawable/btn_click_bg"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(view)->clickListener.onClick(view)}"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/item_layout_left_margin"
+                    android:paddingRight="@dimen/item_layout_right_margin"
+                    android:visibility="@{BuildConfig.IS_INTERNAL ? View.GONE : View.VISIBLE}">
+
+                    <ImageView
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@drawable/safe"/>
+
+                    <TextView
+                        style="@style/style_16sp_gray34"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/string_account_safe"/>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/icon_setarrow_right"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

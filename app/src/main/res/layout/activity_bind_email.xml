@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.proton.carepatchtemp.viewmodel.user.InternationalLoginViewModel"/>
+
+        <import type="android.view.View"/>
+
+        <import type="android.text.TextUtils"/>
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top_navigation"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/id_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="209dp"
+                    android:layout_height="63dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/proton"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="22dp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="@string/string_bind_email"
+                    android:textColor="#7f7f7f"
+                    android:textSize="@dimen/sp28"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="22dp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="@string/string_bind_email_expain"
+                    android:textColor="#7f7f7f"
+                    android:textSize="16sp"/>
+
+
+                <EditText
+                    style="@style/EditStyle"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:drawableLeft="@drawable/email"
+                    android:hint="@string/string_input_your_email"
+                    android:maxLines="1"
+                    android:text="@={viewModel.email}"
+                    android:textSize="14sp"/>
+
+                <Space
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <Button
+                    style="@style/MyBtnStyle"
+                    android:layout_width="220dp"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/main_gradient_radius"
+                    android:onClick="@{()->viewModel.sendBindEmailCode()}"
+                    android:text="@string/string_next"
+                    android:textColor="#fff"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

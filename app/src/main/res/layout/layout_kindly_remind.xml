@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="@android:color/transparent"
+                  android:gravity="center"
+                  android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="450dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/shape_radius5dp_white"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="21dp"
+                    android:layout_marginLeft="76dp"
+                    android:layout_marginTop="37dp"
+                    android:src="@drawable/icon_tip_angle"/>
+
+                <TextView
+                    android:id="@+id/id_tv_kindly_tip"
+                    style="@style/style_26sp_blue30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/string_warm_tips"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="21dp"
+                    android:layout_marginLeft="205dp"
+                    android:src="@drawable/icon_tip_angle"/>
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="1">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/style_12sp_gray33"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:lineSpacingExtra="5dp"
+                            android:text="@string/string_remind_tip"/>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/style_12sp_gray33"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:lineSpacingExtra="5dp"
+                                android:text="• 耳腔温度正常范围："
+                                android:visibility="invisible"/>
+
+                            <TextView
+                                style="@style/style_12sp_gray33"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:lineSpacingExtra="5dp"
+                                android:text="@string/string_remind_tip2"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/style_12sp_gray33"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:lineSpacingExtra="5dp"
+                            android:text="@string/string_remind_tip3"/>
+
+                    </LinearLayout>
+                </ScrollView>
+
+                <Button
+                    android:id="@+id/id_btn_tip"
+                    style="@style/style_15sp_whiteff"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/shape_radius5dp_blue30_fill"
+                    android:text="@string/string_I_know"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/icon_round_tip"/>
+        </FrameLayout>
+    </LinearLayout>
+</layout>

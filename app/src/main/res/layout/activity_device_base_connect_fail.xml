@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top_navigation"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/id_tv_connectFail"
+                    style="@style/style_26sp_blue30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="38dp"
+                    android:text="@string/string_connect_fail_wifi"/>
+
+                <ImageView
+                    android:layout_width="183dp"
+                    android:layout_height="183dp"
+                    android:src="@drawable/img_wifi_connect_fail"/>
+
+                <TextView
+                    style="@style/style_20sp_gray33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/string_cannot_connect_wifi"
+                    />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/pd30"
+                        >
+                        <TextView
+                            android:id="@+id/txt_explain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="17dp"
+                            android:lineSpacingExtra="13dp"
+                            android:text="@string/string_connect_fail_check_appli"
+                            android:textColor="#898989"
+                            android:textSize="14sp"/>
+
+                        <ImageView
+                            android:id="@+id/iv_explain"
+                            android:layout_width="@dimen/pd40"
+                            android:layout_height="@dimen/pd40"
+                            android:src="@drawable/explain"
+                            android:layout_toRightOf="@+id/txt_explain"
+                            android:padding="10dp"
+                            android:layout_marginTop="7dp"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:lineSpacingExtra="13dp"
+                            android:text="@string/string_connect_fail_reason"
+                            android:layout_below="@+id/txt_explain"
+                            android:textColor="#898989"
+                            android:textSize="14sp"/>
+
+                    </RelativeLayout>
+
+                <TextView
+                    style="@style/style_14sp_gray33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:visibility="gone"
+                    android:text="@string/string_patch_power_tip"/>
+
+                <Button
+                    android:id="@+id/id_btn_retry"
+                    style="@style/MyBtnStyle"
+                    android:layout_marginBottom="26dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="19dp"
+                    android:background="@drawable/shape_radius20_blue30_fill"
+                    android:text="@string/string_retry"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

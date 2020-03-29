@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="connector_fireware_not_exist">Firmware does not exist</string>
+    <string name="connector_please_open_bluetooth">Please turn on bluetooth.</string>
+    <string name="connector_connect_fail">Failed to connect device</string>
+    <string name="connector_device_disconnect">Device connection interruption</string>
+    <string name="connector_fireware_write_fail">Firmware package write failed</string>
+    <string name="connector_reset_fail">Reset device failed</string>
+    <string name="string_battery_low_fifty">Power below 30%</string>Power
+</resources>

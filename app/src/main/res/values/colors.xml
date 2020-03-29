@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fff</color>
+    <color name="colorPrimaryDark">#fff</color>
+    <color name="colorAccent">#3E98F5</color>
+    <color name="color_main">#00b9ff</color>
+    <color name="color_loading">@color/color_main</color>
+    <color name="color_blue_30">#30b8ff</color>
+    <color name="color_blue_22b7">#22b7ff</color>
+    <color name="color_blue_4f">#4fbdf1</color>
+    <color name="color_blue_00">#0095e4</color>
+    <!--灰色字体样式-->
+    <color name="color_gray_7f">#7F7F7F</color>
+    <color name="color_main_bg">#f5f5f5</color>
+    <color name="color_gray_34">#343434</color>
+    <color name="color_gray_33">#333333</color>
+    <color name="color_gray_b3">#b3b3b3</color>
+    <color name="color_gray_b2">#b2b2b2</color>
+    <color name="color_gray_e6">#e6e6e6</color>
+    <color name="color_gray_6c">#cccccc</color>
+
+    <!---橙色、红色-->
+    <color name="orange">#ff00</color>
+    <color name="color_blue_16">#1698ff</color>
+    <color name="color_orange_ff">#ff6c59</color>
+    <!--绿色-->
+    <color name="color_green_52">#52c277</color>
+    <color name="color_gray_b6">#b6b6b6</color>
+    <color name="color_orange_ff8">#ff8171</color>
+    <color name="color_gray_cc">#CCCCCC</color>
+    <color name="color_orange_ff6">#ff6c59</color>
+    <color name="color_temp_normal">#00b9ff</color>
+    <color name="color_temp_high">#ff604f</color>
+    <color name="color_temp_low">#7aabe2</color>
+    <color name="color_gray_2a">#2a2a2a</color>
+    <color name="divider">#ddd</color>
+    <color name="color_orange_fc">#fc6d5d</color>
+    <color name="color_blue_0095">#0095e4</color>
+    <color name="color_gray_e0">#e0e0e0</color>
+    <color name="color_gray_dd">#dddddd</color>
+    <color name="color_blue_5bb">#5BB8F6</color>
+    <color name="color_gray_c6">#c6c6c6</color>
+    <color name="color_gray_d7">#d7d7d7</color>
+    <color name="color_gray_d4">#d4d4d4</color>
+    <color name="color_blue_005c">#005c9c</color>
+    <color name="color_light_on">#63B5F4</color>
+    <color name="color_light_off">#fff</color>
+    <color name="color_red">#d82a2a</color>
+
+    <color name="color_algorithm_temp">#EB6B63</color>
+    <color name="color_real_temp">@color/color_temp_normal</color>
+    <color name="color_algorithm_status">#64EF63</color>
+
+</resources>

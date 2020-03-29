@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.proton.carepatchtemp.BuildConfig"/>
+
+        <import type="android.view.inputmethod.EditorInfo"/>
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top_navigation"/>
+
+        <LinearLayout
+            android:id="@+id/id_loading_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="38dp"
+                android:layout_marginRight="50dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/id_et_phoneNum"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:hint="@{BuildConfig.IS_INTERNAL ? @string/string_others_account : @string/string_otherPhoneNum}"
+                    android:inputType="@{BuildConfig.IS_INTERNAL ? EditorInfo.TYPE_CLASS_TEXT : EditorInfo.TYPE_CLASS_PHONE}"
+                    android:textColor="#7f7f7f"
+                    android:textSize="16sp"/>
+
+                <ImageView
+                    android:id="@+id/id_iv_phoneNumDel"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/icon_edit_delete"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/id_iv_contact"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="8dp"
+                    android:padding="4dp"
+                    android:src="@drawable/img_contact"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/id_iv"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="50dp"
+                android:background="#b3b3b3"/>
+
+            <TextView
+                android:id="@+id/id_tv_share_tip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="5dp"
+                android:text="@string/string_deviceShare_tip"
+                android:textColor="#1698ff"
+                android:textSize="14sp"/>
+
+            <LinearLayout
+                android:id="@+id/id_btn_shareDevice"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/shape_radius5dp_blue30_fill"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:src="@drawable/icon_tranlucent_share"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13dp"
+                    android:clickable="false"
+                    android:text="@string/string_share_device"
+                    android:textColor="#fff"
+                    android:textSize="17sp"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/style_16sp_gray33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="39dp"
+                android:text="@string/string_share_history"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/id_rv_shareHistory"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="24dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

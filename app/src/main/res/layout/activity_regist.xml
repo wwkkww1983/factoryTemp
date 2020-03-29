@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.proton.carepatchtemp.viewmodel.user.LoginViewModel"/>
+
+        <import type="android.view.View"/>
+
+        <import type="android.text.TextUtils"/>
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top_navigation"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/id_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="209dp"
+                    android:layout_height="63dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/proton"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="22dp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="@string/string_register_tip"
+                    android:textColor="#7f7f7f"
+                    android:textSize="16sp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="13dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/string_regist_warm_1"
+                        android:textColor="#7f7f7f"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{()->viewModel.showPrivicy()}"
+                        android:text="@string/string_privacy_policy"
+                        android:textColor="@color/color_main"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/string_and"
+                        android:textColor="#7f7f7f"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{()->viewModel.showUserAgreement()}"
+                        android:text="@string/string_services_agreement"
+                        android:textColor="@color/color_main"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <EditText
+                    style="@style/EditStyle"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:drawableLeft="@drawable/user_img"
+                    android:enabled="@{viewModel.isCanEditPhone}"
+                    android:hint="@string/string_input_your_phone"
+                    android:inputType="number"
+                    android:maxLength="11"
+                    android:maxLines="1"
+                    android:text="@={viewModel.phoneNum}"
+                    android:textSize="14sp"/>
+
+                <!--输入密码-->
+                <EditText
+                    style="@style/EditStyle"
+                    android:layout_marginTop="20dp"
+                    android:drawableLeft="@drawable/pwd_img"
+                    android:hint="@string/string_please_input_pwd"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:text="@={viewModel.pwdNum}"
+                    android:textSize="14sp"/>
+
+                <RelativeLayout
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="18dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/et_verification_code"
+                        style="@style/EditStyle"
+                        android:drawableLeft="@drawable/icon_code"
+                        android:hint="@string/string_input_code"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:maxLines="1"
+                        android:text="@={viewModel.codeNum}"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/id_send_code"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/btn_verification_bg"
+                        android:enabled="@{viewModel.isCanSendCode}"
+                        android:gravity="center"
+                        android:onClick="@{()->viewModel.sendRegistCode()}"
+                        android:padding="8dp"
+                        android:text='@{viewModel.sendCodeStr}'
+                        android:textColor="#fff"
+                        android:textSize="12sp"/>
+
+                </RelativeLayout>
+
+                <Space
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/id_btn_finish"
+                        style="@style/MyBtnStyle"
+                        android:layout_width="220dp"
+                        android:layout_height="@dimen/btn_height"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/main_gradient_radius"
+                        android:onClick="@{()->viewModel.regist()}"
+                        android:text="@string/string_regist"
+                        android:textColor="#fff"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:onClick="@{()-> viewModel.goToLogin()}"
+                        android:text="@string/string_has_account_go_to_login"
+                        android:textColor="@drawable/text_color_selector"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

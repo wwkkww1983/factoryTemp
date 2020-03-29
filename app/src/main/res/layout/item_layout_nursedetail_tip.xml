@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/id_rootview"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/id_nursesuggest_pic"
+        android:layout_width="155dp"
+        android:layout_height="104dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_nursedes_common"/>
+</LinearLayout>

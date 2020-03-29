@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="#fff"
+              android:gravity="center_horizontal"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/id_top_text"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#30b8ff"
+        android:gravity="center"
+        android:text="@string/string_device_disconnect"
+        android:textColor="#fff"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/id_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:lineSpacingExtra="6dp"
+        android:textColor="#333"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/id_bluetooth_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="10dp"
+        android:lineSpacingExtra="6dp"
+        android:text="@string/string_patch_whiteLight"
+        android:textColor="#333"
+        android:textSize="14sp"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/id_wifi_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="10dp"
+        android:lineSpacingExtra="6dp"
+        android:textColor="#333"
+        android:textSize="14sp"
+        android:visibility="gone"/>
+
+    <View
+        style="@style/DividerStyle"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/id_confirm_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/string_i_konw"
+        android:textColor="#30b8ff"
+        android:textSize="14sp"/>
+
+    <View
+        style="@style/DividerStyle"/>
+
+</LinearLayout>

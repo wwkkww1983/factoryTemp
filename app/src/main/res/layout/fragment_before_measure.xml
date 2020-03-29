@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.proton.carepatchtemp.viewmodel.measure.MeasureViewModel" />
+
+        <import type="com.proton.carepatchtemp.utils.Utils" />
+
+        <import type="android.view.View" />
+
+        <import type="com.proton.carepatchtemp.enums.InstructionConstant" />
+
+        <import type="com.proton.carepatchtemp.component.App" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_main_bg">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="10dp"
+            android:fillViewport="true">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/icon_card_shadow"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="15dp">
+
+                        <include
+                            android:id="@+id/id_battery_layout"
+                            layout="@layout/layout_battery"
+                            bind:battery="@{viewmodel.battery}"
+                            bind:bleRssi="@{viewmodel.bleRssi}"
+                            bind:connectStatus="@{viewmodel.connectStatus}"
+                            bind:connectionType="@{viewmodel.connectionType}"
+                            bind:lastConnectionType="@{viewmodel.lastConnectType}"
+                            bind:wifiRssi="@{viewmodel.wifiRssi}" />
+
+                        <ImageView
+                            android:id="@+id/id_close"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="5dp"
+                            android:padding="5dp"
+                            android:src="@drawable/icon_close_card" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="60dp"
+                        android:gravity="center"
+                        android:text="@string/string_keep_arm_close"
+                        android:textColor="#30b8ff"
+                        android:textSize="21sp" />
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/id_gif"
+                        android:layout_width="230dp"
+                        android:layout_height="167dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="50dp"
+                        android:imageURI="@{safeUnbox(viewmodel.isP02()) ? @drawable/icon_before_measure_tips_p02 : @drawable/icon_before_measure_tips_p03}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="@{viewmodel.measureTips}"
+                        android:textColor="#d72626"
+                        android:textSize="15sp"
+                        android:visibility="@{viewmodel.connectStatus == 2? View.VISIBLE : View.INVISIBLE}" />
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="20dp">
+
+                        <com.proton.carepatchtemp.view.CircleView
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:lineSpacingExtra="@{App.get().getInstructionConstant()==InstructionConstant.aa?@dimen/pd5:@dimen/pd5}"
+                                android:text="@{Utils.showPreHeatingOrLow(App.get().getInstructionConstant(),viewmodel.needShowPreheating,viewmodel.needShowTempLow,viewmodel.currentTemp,viewmodel.algorithVersion,viewmodel.algorithStatus,viewmodel.algorithGesture,viewmodel.originalTemp,viewmodel.algorithmTemp)}"
+                                android:textColor="#4bb8f9"
+                                android:textSize="@{Utils.getTempTextSize(App.get().getInstructionConstant(),true,viewmodel.connectStatus,viewmodel.currentTemp,viewmodel.needShowPreheating,viewmodel.needShowTempLow)}" />
+
+                            <TextView
+                                android:id="@+id/id_current_temp_unit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="3dp"
+                                android:layout_marginTop="6dp"
+                                android:text='@{Utils.getTempUnit()}'
+                                android:textColor="#4bb8f9"
+                                android:textSize="14sp"
+                                android:visibility="@{(safeUnbox(viewmodel.needShowPreheating)||safeUnbox(viewmodel.needShowTempLow)||App.get().getInstructionConstant()!=InstructionConstant.aa) ? View.GONE : View.VISIBLE}" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+                </LinearLayout>
+
+            </FrameLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>

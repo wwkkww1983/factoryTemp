@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+                  android:id="@+id/lnl_msg_setting_menu"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@color/color_main_bg"
+                  android:divider="@drawable/divider_item_layout_1dp"
+                  android:orientation="vertical"
+                  android:showDividers="middle">
+
+        <!--高温提醒-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/item_layout_left_margin"
+            android:paddingRight="@dimen/item_layout_right_margin">
+
+            <TextView
+                style="@style/style_14sp_gray7f"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="18dp"
+                android:paddingTop="19dp"
+                android:text="@string/string_vibrator_notify"/>
+
+            <com.proton.carepatchtemp.view.SwitchView
+                android:id="@+id/id_vibrator_notify"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                app:primaryColor="@color/color_main"
+                app:primaryColorDark="@color/color_main"/>
+        </LinearLayout>
+
+        <!--提醒铃声-->
+        <LinearLayout
+            android:id="@+id/id_bell_remind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_click_bg"
+            android:gravity="center_vertical"
+            android:onClick="@{(view)->clickListener.onClick(view)}"
+            android:paddingLeft="@dimen/item_layout_left_margin"
+            android:paddingRight="@dimen/item_layout_right_margin">
+
+            <TextView
+                style="@style/style_14sp_gray7f"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="18dp"
+                android:paddingTop="19dp"
+                android:text="@string/string_the_bell_remind"/>
+
+            <TextView
+                style="@style/style_14sp_gray7f"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"/>
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/icon_arrow_right"/>
+        </LinearLayout>
+        <!--提醒时间间隔-->
+        <LinearLayout
+            android:id="@+id/id_lay_timeDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_click_bg"
+            android:gravity="center_vertical"
+            android:onClick="@{(view)->clickListener.onClick(view)}"
+            android:paddingLeft="@dimen/item_layout_left_margin"
+            android:paddingRight="@dimen/item_layout_right_margin">
+
+            <TextView
+                style="@style/style_14sp_gray7f"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="18dp"
+                android:paddingTop="19dp"
+                android:text="@string/string_time_duration_notify"/>
+
+            <TextView
+                android:id="@+id/id_tv_time_duration"
+                style="@style/style_14sp_gray7f"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"/>
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/icon_arrow_right"/>
+        </LinearLayout>
+        <!--高温提醒-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/item_layout_left_margin"
+            android:paddingRight="@dimen/item_layout_right_margin">
+
+            <TextView
+                style="@style/style_14sp_gray7f"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="18dp"
+                android:paddingTop="19dp"
+                android:text="@string/string_high_temp_notify"/>
+
+            <com.proton.carepatchtemp.view.SwitchView
+                android:id="@+id/sv_high_temp_notify"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                app:primaryColor="@color/color_main"
+                app:primaryColorDark="@color/color_main"/>
+        </LinearLayout>
+        <!--低温提醒-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/item_layout_left_margin"
+            android:paddingRight="@dimen/item_layout_right_margin">
+
+            <TextView
+                style="@style/style_14sp_gray7f"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="18dp"
+                android:paddingTop="19dp"
+                android:text="@string/string_low_temp_notify"/>
+
+            <com.proton.carepatchtemp.view.SwitchView
+                android:id="@+id/sv_low_temp_notify"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                app:primaryColor="@color/color_main"
+                app:primaryColorDark="@color/color_main"/>
+        </LinearLayout>
+        <!--设备低电量提醒-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/item_layout_left_margin"
+            android:paddingRight="@dimen/item_layout_right_margin">
+
+            <TextView
+                style="@style/style_14sp_gray7f"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="18dp"
+                android:paddingTop="19dp"
+                android:text="@string/string_device_lowpower_notify"/>
+
+            <com.proton.carepatchtemp.view.SwitchView
+                android:id="@+id/sv_lowpower_notify"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                app:primaryColor="@color/color_main"
+                app:primaryColorDark="@color/color_main"/>
+        </LinearLayout>
+        <!--连接中断提醒-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/item_layout_left_margin"
+            android:paddingRight="@dimen/item_layout_right_margin">
+
+            <TextView
+                style="@style/style_14sp_gray7f"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="18dp"
+                android:paddingTop="19dp"
+                android:text="@string/string_connect_interrupt"/>
+
+            <com.proton.carepatchtemp.view.SwitchView
+                android:id="@+id/sv_connect_interrupt"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                app:primaryColor="@color/color_main"
+                app:primaryColorDark="@color/color_main"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

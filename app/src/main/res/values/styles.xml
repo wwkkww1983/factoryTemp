@@ -1,0 +1,269 @@
+<resources>
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:listDivider">@drawable/list_divider</item>
+    </style>
+
+    <style name="AnimationActivity" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+
+    <style name="StyleRetry">
+        <item name="android:id">@id/retry_button</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:background">@drawable/drawable_retry_bg</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#6E7175</item>
+        <item name="android:text">@string/string_click_refresh</item>
+    </style>
+
+    <style name="AppSplash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/icon_splash_auto</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="EditStyle">
+        <item name="android:layout_width">250dp</item>
+        <item name="android:layout_height">34dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:background">@drawable/drawable_edit_bg</item>
+        <item name="android:drawablePadding">15dp</item>
+        <item name="android:textColorHint">#7F7F7F</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="EditStyle2">
+        <item name="android:layout_width">295dp</item>
+        <item name="android:layout_height">34dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:background">@drawable/drawable_edit_bg</item>
+        <item name="android:textColorHint">#7F7F7F</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="MyBtnStyle" parent="@style/Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:stateListAnimator">@animator/selector_animator</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <!--单选按钮样式-->
+    <style name="style_rb_managecenter">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:textColor">@color/color_gray_7f</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <!--灰色字体样式-->
+
+    <style name="style_9sp_gray33">
+        <item name="android:textColor">@color/color_gray_33</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+
+    <style name="style_12sp_gray33">
+        <item name="android:textColor">@color/color_gray_33</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="style_14sp_gray33">
+        <item name="android:textColor">@color/color_gray_33</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="style_15sp_gray33">
+        <item name="android:textColor">@color/color_gray_33</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="style_16sp_gray33">
+        <item name="android:textColor">@color/color_gray_33</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="style_20sp_gray33">
+        <item name="android:textColor">@color/color_gray_33</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="style_10sp_grayb3">
+        <item name="android:textColor">@color/color_gray_b3</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="style_12sp_grayb3">
+        <item name="android:textColor">@color/color_gray_b3</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="style_13sp_grayb3">
+        <item name="android:textColor">@color/color_gray_b3</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="style_15sp_grayb3">
+        <item name="android:textColor">@color/color_gray_b3</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="style_16sp_gray34">
+        <item name="android:textColor">@color/color_gray_34</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="style_14sp_gray7f">
+        <item name="android:textColor">@color/color_gray_7f</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="style_15sp_b2">
+        <item name="android:textColor">@color/color_gray_b2</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!--蓝色字体样式-->
+    <style name="style_15sp_blue30">
+        <item name="android:textColor">@color/color_blue_30</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="style_10sp_gray2a">
+        <item name="android:textColor">@color/color_gray_2a</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="style_12sp_gray2a">
+        <item name="android:textColor">@color/color_gray_2a</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="style_13sp_whiteff">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="style_15sp_whiteff" parent="@style/Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="style_18sp_orange66">
+        <item name="android:textColor">@color/color_orange_ff</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="style_16sp_orangeff">
+        <item name="android:textColor">@color/color_orange_ff</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="style_16sp_b3">
+        <item name="android:textColor">@color/color_gray_b3</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="style_16sp_blue30">
+        <item name="android:textColor">@color/color_blue_30</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="DividerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/divider</item>
+    </style>
+
+    <style name="style_12sp_tv34">
+        <item name="android:textColor">@color/color_gray_34</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="style_12sp_gray97">
+        <item name="android:color">@color/color_gray_97</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="animate_dialog">
+        <item name="android:windowEnterAnimation">@anim/dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_out</item>
+    </style>
+
+    <style name="popwindow_animation">
+        <item name="android:windowEnterAnimation">@anim/scale_in</item>
+        <item name="android:windowExitAnimation">@anim/scale_out</item>
+    </style>
+
+    <style name="style_14sp_blue30">
+        <item name="android:textColor">@color/color_blue_30</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="style_26sp_blue30" parent="@style/Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/color_blue_30</item>
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="style_26sp_black" parent="@style/Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/color_gray_33</item>
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="style_18sp_gray33">
+        <item name="android:textColor">@color/color_gray_33</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="style_17sp_whiteff" parent="@style/Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="style_warm_animation">
+        <item name="android:windowEnterAnimation">@anim/modal_in</item>
+        <item name="android:windowExitAnimation">@anim/modal_out</item>
+    </style>
+
+    <color name="color_gray_97">#979797</color>
+
+
+    <style name="fireware_update_style_update">
+        <item name="android:textColor">@color/color_gray_6c</item>
+        <item name="android:textSize">@dimen/sp16</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="fireware_update_style_updating">
+        <item name="android:textColor">#30b8ff</item>
+        <item name="android:textSize">@dimen/sp18</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+</resources>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="@color/color_main_bg"
+                  android:orientation="vertical"
+                  tools:context="com.proton.carepatchtemp.activity.report.AddReportNotesRemarkActivity">
+
+        <include layout="@layout/include_top_navigation"/>
+
+        <EditText
+            android:id="@+id/id_tv_note_remark"
+            style="@style/style_15sp_gray33"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/shape_bg_add_remark"
+            android:gravity="left"
+            android:padding="8dp"
+            android:text=""/>
+
+        <Button
+            android:id="@+id/id_btn_finish"
+            style="@style/style_15sp_whiteff"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="19dp"
+            android:background="@color/color_main"
+            android:text="@string/string_finish"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/img_addremark_bottom"/>
+    </LinearLayout>
+</layout>

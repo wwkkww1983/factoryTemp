@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="15dp"
+    android:background="@drawable/icon_profile_list_shadow"
+    android:paddingBottom="15dp">
+
+    <TextView
+        android:id="@+id/id_current_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:text="校准值：+0.05℃"
+        android:textColor="@color/color_main"
+        android:textSize="@dimen/sp18"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/id_device_type"
+        style="@style/style_9sp_gray33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="0204,"
+        app:layout_constraintLeft_toLeftOf="@+id/id_current_temp"
+        app:layout_constraintTop_toBottomOf="@+id/id_current_temp" />
+
+    <TextView
+        android:id="@+id/id_mac"
+        style="@style/style_9sp_gray33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/id_device_type"
+        app:layout_constraintLeft_toRightOf="@+id/id_device_type"
+        app:layout_constraintTop_toTopOf="@+id/id_device_type" />
+
+    <TextView
+        android:id="@+id/id_sn"
+        style="@style/style_9sp_gray33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="@+id/id_device_type"
+        app:layout_constraintTop_toBottomOf="@+id/id_device_type" />
+
+    <TextView
+        android:id="@+id/id_ver"
+        style="@style/style_9sp_gray33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/id_sn"
+        app:layout_constraintLeft_toRightOf="@+id/id_sn"
+        app:layout_constraintTop_toTopOf="@+id/id_sn" />
+
+    <TextView
+        android:id="@+id/id_additional_data1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="测温点1：37.01℃(槽37.05℃)"
+        android:textColor="@color/color_main"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_ver" />
+
+    <TextView
+        android:id="@+id/id_additional_data2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="测温点2：39.01℃(槽39.03℃)"
+        android:textColor="@color/color_main"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="@+id/id_additional_data1"
+        app:layout_constraintTop_toBottomOf="@+id/id_additional_data1" />
+
+    <TextView
+        android:id="@+id/id_qualified"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/solid_main_bg"
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="合格"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/id_not_qualified"
+        app:layout_constraintRight_toLeftOf="@+id/id_not_qualified"
+        app:layout_constraintTop_toTopOf="@+id/id_not_qualified" />
+
+    <TextView
+        android:id="@+id/id_not_qualified"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/stroke_main_bg"
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="不合格"
+        android:textColor="@color/color_main"
+        android:textSize="14sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_close" />
+
+    <TextView
+        android:id="@+id/id_qualification_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/solid_main_bg"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp"
+        android:text="已校准"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintRight_toRightOf="@+id/id_not_qualified"
+        app:layout_constraintTop_toBottomOf="@+id/id_not_qualified" />
+
+    <ImageView
+        android:id="@+id/id_close"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="10dp"
+        android:src="@drawable/icon_close_card"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+</android.support.constraint.ConstraintLayout>

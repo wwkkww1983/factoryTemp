@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModle"
+            type="com.proton.carepatchtemp.viewmodel.user.InternationalLoginViewModel"/>
+
+        <import type="com.proton.carepatchtemp.BuildConfig"/>
+    </data>
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/id_lay_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="97dp"
+                android:layout_height="97dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="75dp"
+                android:src="@{BuildConfig.IS_INTERNAL ? @drawable/welcome_logo_international : @drawable/welcome_logo}"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="52dp"
+                android:text="@string/string_slogon"
+                android:textColor="#7f7f7f"
+                android:textSize="27sp"/>
+
+            <View
+                android:layout_width="45dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@color/color_main"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="@string/string_we_do"
+                android:textColor="#4c4c4c"
+                android:textSize="14sp"/>
+
+
+            <Button
+                android:id="@+id/id_login_btn"
+                style="@style/MyBtnStyle"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="@dimen/pd30"
+                android:layout_marginRight="28dp"
+                android:background="@drawable/main_gradient_radius"
+                android:text="@string/string_login"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+
+            <Button
+                android:id="@+id/id_regist_btn"
+                style="@style/MyBtnStyle"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="28dp"
+                android:background="@drawable/btn_register_bg"
+                android:text="@string/string_regist"
+                android:textColor="@color/color_main"
+                android:textSize="16sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="35dp"
+                android:gravity="center"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp1"
+                    android:layout_weight="1"
+                    android:background="@color/color_gray_cc"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_login_or"
+                    android:layout_marginLeft="@dimen/pd15"
+                    android:layout_marginRight="@dimen/pd15"
+                    android:textSize="@dimen/sp14"
+                    android:textColor="@color/color_gray_cc"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp1"
+                    android:layout_weight="1"
+                    android:background="@color/color_gray_cc"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/pd15"
+                >
+                <Button
+                    android:id="@+id/id_facebook_login_btn"
+                    android:layout_width="@dimen/pd40"
+                    android:layout_height="@dimen/pd40"
+                    android:background="@drawable/facebook"
+                    android:layout_marginRight="@dimen/pd60"
+                    android:stateListAnimator="@animator/selector_animator"
+                    />
+
+                <com.facebook.login.widget.LoginButton
+                    android:id="@+id/face_book"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/pd60"
+                    android:visibility="gone"
+                    />
+
+                <Button
+                    android:id="@+id/id_google_login_btn"
+                    android:layout_width="@dimen/pd40"
+                    android:layout_height="@dimen/pd40"
+                    android:background="@drawable/google"
+                    android:stateListAnimator="@animator/selector_animator"
+                    />
+            </LinearLayout>
+
+           <!-- <Button
+                android:id="@+id/id_google_login_btn"
+                android:layout_width="220dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/pd15"
+                android:layout_marginBottom="12dp"
+                android:background="#ce543c"
+                android:drawableLeft="@drawable/login_google"
+                android:gravity="center"
+                android:paddingLeft="6dp"
+                android:paddingRight="@dimen/base"
+                android:stateListAnimator="@animator/selector_animator"
+                android:text="@string/string_google_login"
+                android:textColor="@color/white"
+                android:textSize="14sp"/>
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/id_facebook_login_btn"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:stateListAnimator="@animator/selector_animator"
+                android:visibility="visible"
+                app:com_facebook_login_text="@string/string_facebook_login"/>-->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_regist_warm_1"
+                    android:textColor="#7f7f7f"
+                    android:textSize="@dimen/sp14"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_main"
+                    android:text="@string/string_privacy_policy"
+                    android:onClick="@{()->viewModle.showPrivicy()}"
+                    android:textSize="@dimen/sp14"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_and"
+                    android:textSize="@dimen/sp14"
+                    android:textColor="#7f7f7f"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_services_agreement"
+                    android:textColor="@color/color_main"
+                    android:textSize="@dimen/sp14"
+                    android:onClick="@{()->viewModle.showUserAgreement()}"
+                    />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="9dp"
+                android:layout_marginTop="@dimen/pd15"
+                >
+
+                <TextView
+                    android:id="@+id/id_tv_copyright"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/string_copyright"
+                    android:textColor="#7f7f7f"
+                    android:textSize="10sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/id_tv_copyright"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="3dp"
+                    android:text="@string/string_company"
+                    android:textColor="#7f7f7f"
+                    android:textSize="10sp"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>

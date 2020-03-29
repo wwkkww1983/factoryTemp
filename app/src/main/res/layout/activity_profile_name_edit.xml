@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="@color/color_main_bg"
+                  android:orientation="vertical"
+                  tools:context="com.proton.carepatchtemp.activity.profile.ProfileNameEditActivity">
+
+        <include
+            android:id="@+id/id_include_top_nav"
+            layout="@layout/include_top_navigation"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="28dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp">
+            <!--限制输入10个汉字-->
+            <EditText
+                android:id="@+id/id_et_profile_name"
+                style="@style/style_20sp_gray33"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:ellipsize="end"
+                android:maxLength="15"
+                android:maxLines="1"
+                android:text="--"
+                android:textColor="#9e9e9e"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:id="@+id/id_iv_namedel"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:layout_marginRight="15dp"
+                android:padding="5dp"
+                android:src="@drawable/icon_edittext_delete"
+                android:visibility="visible"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

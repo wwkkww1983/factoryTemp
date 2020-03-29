@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="highestTemp"
+            type="Float"/>
+
+        <variable
+            name="lowestTemp"
+            type="Float"/>
+
+        <import type="com.proton.carepatchtemp.utils.Utils"/>
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/icon_measure_setting_bg"
+        android:orientation="vertical"
+        android:paddingBottom="15dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/string_high_temp_warm_setting"
+            android:textColor="#7f7f7f"
+            android:textSize="14sp"/>
+
+        <Button
+            android:id="@+id/id_highest_temp_setting"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:text="@{Utils.getFormartTempAndUnitStr(safeUnbox(highestTemp))}"
+            android:textColor="#fff"
+            android:textSize="16sp"/>
+
+        <View
+            style="@style/DividerStyle"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/string_low_temp_warm_setting"
+            android:textColor="#7f7f7f"
+            android:textSize="14sp"/>
+
+        <Button
+            android:id="@+id/id_lowest_temp_setting"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:text="@{Utils.getFormartTempAndUnitStr(safeUnbox(lowestTemp))}"
+            android:textColor="#fff"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.proton.carepatchtemp.viewmodel.user.LoginViewModel" />
+
+        <import type="android.view.View" />
+
+        <import type="android.text.TextUtils" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top_navigation" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+
+            <LinearLayout
+                android:id="@+id/id_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp">
+                <!--
+                                <EditText
+                                    style="@style/EditStyle"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="20dp"
+                                    android:drawableLeft="@drawable/user_img"
+                                    android:enabled="@{viewModel.isCanEditPhone}"
+                                    android:hint="@string/string_input_your_phone"
+                                    android:inputType="number"
+                                    android:maxLength="11"
+                                    android:maxLines="1"
+                                    android:text="@={viewModel.phoneNum}"
+                                    android:textSize="14sp"/>
+
+                                <RelativeLayout
+                                    android:layout_width="250dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="18dp"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <EditText
+                                        android:id="@+id/et_verification_code"
+                                        style="@style/EditStyle"
+                                        android:drawableLeft="@drawable/icon_code"
+                                        android:hint="@string/string_input_code"
+                                        android:inputType="number"
+                                        android:maxLength="6"
+                                        android:maxLines="1"
+                                        android:text="@={viewModel.codeNum}"
+                                        android:textSize="14sp"/>
+
+                                    <TextView
+                                        android:id="@+id/id_send_code"
+                                        android:layout_width="80dp"
+                                        android:layout_height="30dp"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_gravity="center_horizontal"
+                                        android:background="@drawable/btn_verification_bg"
+                                        android:enabled="@{viewModel.isCanSendCode}"
+                                        android:gravity="center"
+                                        android:onClick="@{()->viewModel.sendBindCode()}"
+                                        android:padding="8dp"
+                                        android:text='@{viewModel.sendCodeStr}'
+                                        android:textColor="#fff"
+                                        android:textSize="12sp"/>
+
+                                </RelativeLayout>
+                -->
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/string_bind_phone"
+                    android:textColor="@color/color_gray_33"
+                    android:textSize="@dimen/dimen_24" />
+
+                <TextView
+                    style="@style/style_16sp_gray33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="@string/string_mobile" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/id_input_phone"
+                        style="@style/EditStyle2"
+                        android:hint="@string/string_input_your_phone"
+                        android:inputType="number"
+                        android:maxLength="11"
+                        android:maxLines="1"
+                        android:text="@={viewModel.phoneNum}"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/id_clear_phone"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_alignParentRight="true"
+                        android:onClick="@{v->viewModel.clearPhoneNum()}"
+                        android:padding="8dp"
+                        android:src="@drawable/icon_clear_text"
+                        android:visibility="@{TextUtils.isEmpty(viewModel.phoneNum)?View.GONE:View.VISIBLE}" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    style="@style/style_16sp_gray33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="验证码" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/et_verification_code"
+                        style="@style/EditStyle2"
+                        android:hint="@string/string_input_code"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:maxLines="1"
+                        android:text="@={viewModel.codeNum}"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/id_clear_verify_code"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_toLeftOf="@+id/id_send_code"
+                        android:onClick="@{v->viewModel.clearCodeNum()}"
+                        android:padding="8dp"
+                        android:src="@drawable/icon_clear_text"
+                        android:visibility="@{TextUtils.isEmpty(viewModel.codeNum)?View.GONE:View.VISIBLE}" />
+
+                    <TextView
+                        android:id="@+id/id_send_code"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@{viewModel.isCanSendCode &amp;&amp;viewModel.leftTimes==0 ?@drawable/btn_verification_blue_bg:@drawable/btn_verification_gray_bg}"
+                        android:enabled="@{viewModel.isCanSendCode}"
+                        android:gravity="center"
+                        android:onClick="@{()->viewModel.sendBindCode()}"
+                        android:text='@{viewModel.sendCodeStr}'
+                        android:textColor="#fff"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/id_btn_finish"
+                    style="@style/MyBtnStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@{viewModel.checkCanBindPhone(viewModel.phoneNum,viewModel.codeNum)?@drawable/main_gradient_radius:@drawable/gray_23_radius}"
+                    android:clickable="@{viewModel.checkCanBindPhone(viewModel.phoneNum,viewModel.codeNum)}"
+                    android:onClick="@{()->viewModel.bindPhone()}"
+                    android:text="@string/string_finish"
+                    android:textColor="@{viewModel.checkCanBindPhone(viewModel.phoneNum,viewModel.codeNum)?@color/white:@color/color_gray_b2}"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

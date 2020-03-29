@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="15dp"
+    android:background="@drawable/icon_profile_list_shadow">
+
+    <TextView
+        android:id="@+id/id_current_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:text="0.00"
+        android:textColor="@color/color_main"
+        android:textSize="@dimen/sp18"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/id_device_type"
+        style="@style/style_9sp_gray33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0204,"
+        android:layout_marginTop="5dp"
+        app:layout_constraintLeft_toLeftOf="@+id/id_current_temp"
+        app:layout_constraintTop_toBottomOf="@+id/id_current_temp" />
+
+    <TextView
+        android:id="@+id/id_mac"
+        style="@style/style_9sp_gray33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/id_device_type"
+        app:layout_constraintLeft_toRightOf="@+id/id_device_type"
+        app:layout_constraintTop_toTopOf="@+id/id_device_type" />
+
+
+    <TextView
+        android:id="@+id/id_sn"
+        style="@style/style_9sp_gray33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="@+id/id_device_type"
+        app:layout_constraintTop_toBottomOf="@+id/id_device_type" />
+
+    <TextView
+        android:id="@+id/id_ver"
+        style="@style/style_9sp_gray33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/id_sn"
+        app:layout_constraintLeft_toRightOf="@+id/id_sn"
+        app:layout_constraintTop_toTopOf="@+id/id_sn" />
+
+    <TextView
+        android:id="@+id/id_additional_data"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_ver"
+        android:text="测温点1：37.01℃(槽37.05℃)"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/color_main"
+        android:textSize="12sp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/id_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/add_new_device_bg"
+        android:gravity="center"
+        android:text="未稳定"
+        android:textColor="@color/color_main"
+        android:textSize="14sp"
+        android:padding="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/id_disconnect"
+        app:layout_constraintRight_toLeftOf="@+id/id_disconnect"
+        app:layout_constraintTop_toTopOf="@+id/id_disconnect" />
+
+    <TextView
+        android:id="@+id/id_disconnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/add_new_device_bg"
+        android:gravity="center"
+        android:text="断开连接"
+        android:textColor="@color/color_main"
+        android:textSize="14sp"
+        android:layout_marginRight="15dp"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

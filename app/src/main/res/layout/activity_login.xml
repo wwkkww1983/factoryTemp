@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.proton.carepatchtemp.viewmodel.user.LoginViewModel"/>
+
+        <variable
+            name="viewClickListener"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top_navigation"/>
+
+        <ImageView
+            android:id="@+id/id_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/welcome_logo"/>
+
+        <EditText
+            style="@style/EditStyle"
+            android:layout_marginTop="45dp"
+            android:drawableLeft="@drawable/user_img"
+            android:hint="@string/string_input_your_phone"
+            android:inputType="number"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:text="@={viewmodel.phoneNum}"
+            android:textSize="14sp"/>
+
+        <EditText
+            style="@style/EditStyle"
+            android:layout_marginTop="18dp"
+            android:drawableLeft="@drawable/pwd_img"
+            android:hint="@string/string_input_password"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:text="@={viewmodel.pwdNum}"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/id_tv_forgetpwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:onClick="@{(view)->viewClickListener.onClick(view)}"
+            android:text="@string/string_forgot_pwd"
+            android:textColor="@drawable/text_color_selector"
+            android:textSize="14sp"/>
+
+        <android.support.v4.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Button
+            style="@style/MyBtnStyle"
+            android:layout_width="250dp"
+            android:layout_height="@dimen/btn_height"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/main_gradient_radius"
+            android:onClick="@{()->viewmodel.loginByPwd(false)}"
+            android:text="@string/string_login"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="6dp"
+            android:onClick="@{()->viewmodel.goToRegist()}"
+            android:padding="10dp"
+            android:text="@string/string_no_account_go_to_regist"
+            android:textColor="@drawable/text_color_selector"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+</layout>

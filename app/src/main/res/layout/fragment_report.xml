@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_main_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/id_include_refresh"
+                layout="@layout/include_refresh_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <!--隐藏分享生成图表-->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/id_line_chart"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:visibility="invisible">
+            </com.github.mikephil.charting.charts.LineChart>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/id_lay_delete"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom"
+            android:background="@color/color_gray_cc"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="23dp"
+                android:src="@drawable/icon_clear_text"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

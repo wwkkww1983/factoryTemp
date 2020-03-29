@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.proton.carepatchtemp.viewmodel.user.InternationalLoginViewModel" />
+
+        <import type="android.text.TextUtils" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        tools:context=".activity.user.InternationalVerifyEmailCodeActivity">
+
+        <include layout="@layout/include_top_navigation" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/id_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="209dp"
+                    android:layout_height="63dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/pd20"
+                    android:src="@drawable/proton" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="22dp"
+                    android:text="@string/string_verify_you_email_address"
+                    android:textColor="#7f7f7f"
+                    android:textSize="@dimen/sp28" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/pd15"
+                    android:layout_marginRight="@dimen/pd15"
+                    android:layout_marginTop="22dp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="@{@string/string_email_expain_start+viewmodel.email+@string/string_email_expain_end}"
+                    android:textColor="#7f7f7f"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/et_verification_code"
+                    style="@style/EditStyle"
+                    android:layout_marginTop="20dp"
+                    android:drawableLeft="@drawable/icon_code"
+                    android:hint="@string/string_input_code"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:maxLines="1"
+                    android:text="@={viewmodel.codeNum}"
+                    android:textSize="14sp" />
+
+                <RelativeLayout
+                    android:layout_width="250dp"
+                    android:layout_height="34dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/pd20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_toLeftOf="@+id/txt_resend_email"
+                        android:gravity="center"
+                        android:text="@string/string_no_email" />
+
+                    <TextView
+                        android:id="@+id/txt_resend_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:text="@{viewmodel.sendCodeStr}"
+                        android:enabled="@{viewmodel.isCanSendCode}"
+                        android:onClick="@{()->viewmodel.sendEmailCode(false)}"
+                        />
+                </RelativeLayout>
+
+                <Space
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/id_btn_finish"
+                    style="@style/MyBtnStyle"
+                    android:layout_width="220dp"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/main_gradient_radius"
+                    android:onClick="@{()->viewmodel.validateEmailCode()}"
+                    android:orientation="vertical"
+                    android:text="@string/string_finish"
+                    android:textColor="#fff"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

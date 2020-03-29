@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/id_rootview"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:background="@drawable/icon_profile_list_shadow"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="18dp"
+    android:paddingRight="14dp">
+
+    <TextView
+        android:id="@+id/id_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="@string/string_view"
+        android:textColor="#57b7f9"
+        android:textSize="12sp"/>
+
+    <com.proton.carepatchtemp.view.EllipsizeTextView
+        android:id="@+id/id_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="50dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        app:ellipsize_maxLength="9"
+        app:ellipsize_textColor="#3e98f7"
+        app:ellipsize_textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/id_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_toLeftOf="@id/id_arrow"
+        android:layout_toRightOf="@id/id_name"
+        android:text="13岁"
+        android:textColor="#b3b3b3"
+        android:textSize="15sp"/>
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/id_avatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:visibility="visible"
+        app:failureImage="@drawable/icon_default_profile"
+        app:placeholderImage="@drawable/icon_default_profile"
+        app:roundAsCircle="true"/>
+</RelativeLayout>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mcxtzhang.swipemenulib.SwipeMenuLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                                            android:id="@+id/id_swipeLayout"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            app:ios="false"
+                                            app:leftSwipe="true"
+                                            app:swipeEnable="false">
+    <!--内容区域-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_main_bg"/>
+
+        <LinearLayout
+            android:id="@+id/id_msg_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_click_bg"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/id_iv_msg_choose"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:checked="false"
+                android:src="@drawable/icon_rb_unchecked"
+                android:visibility="visible"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp">
+
+                    <View
+                        android:layout_width="64dp"
+                        android:layout_height="2dp"
+                        android:layout_marginLeft="16dp"
+                        android:background="@color/color_main"/>
+
+                    <TextView
+                        android:id="@+id/tv_msg_title"
+                        style="@style/style_15sp_gray33"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="@dimen/base"
+                        android:text="--"/>
+
+                    <TextView
+                        android:id="@+id/tv_msg_time"
+                        style="@style/style_12sp_grayb3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="4dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_msg_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="4dp"
+                        android:text=""
+                        android:textColor="@color/color_gray_7f"
+                        android:textSize="12sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/id_tv_delete"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:background="@color/orange"
+        android:scaleType="center"
+        android:src="@drawable/delete_white"/>
+</com.mcxtzhang.swipemenulib.SwipeMenuLayout><!--
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/btn_click_bg"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_main_bg" />
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal">
+         <ImageView
+             android:id="@+id/id_iv_msg_choose"
+             android:layout_width="18dp"
+             android:layout_height="18dp"
+             android:layout_gravity="center_vertical"
+             android:layout_marginLeft="10dp"
+             android:checked="false"
+             android:src="@drawable/icon_rb_unchecked"
+             android:visibility="gone" />
+         &lt;!&ndash;侧滑&ndash;&gt;
+         <com.mcxtzhang.swipemenulib.SwipeMenuLayout
+             android:id="@+id/id_swipeLayout"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             app:ios="false"
+             app:leftSwipe="true"
+             app:swipeEnable="false">
+             &lt;!&ndash;消息内容&ndash;&gt;
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:background="@android:color/white"
+                 android:orientation="horizontal">
+
+                 <CheckBox
+                     android:id="@+id/cb_msg_select"
+                     style="@style/CustomCheckboxTheme"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center_vertical"
+                     android:layout_marginLeft="16dp"
+                     android:visibility="gone" />
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="vertical">
+
+                     &lt;!&ndash;TODO 测滑后面再做  <com.mcxtzhang.swipemenulib.SwipeMenuLayout
+                           android:id="@+id/sml_msg_delete"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           app:ios="false"
+                           app:leftSwipe="true"
+                           app:swipeEnable="true">&ndash;&gt;
+
+                     &lt;!&ndash;内容区域&ndash;&gt;
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:orientation="vertical"
+                         android:paddingBottom="10dp"
+                         android:paddingTop="10dp">
+
+                         <View
+                             android:layout_width="64dp"
+                             android:layout_height="2dp"
+                             android:layout_marginLeft="16dp"
+                             android:background="@color/color_main" />
+
+                         <TextView
+                             android:id="@+id/tv_msg_title"
+                             style="@style/style_15sp_gray33"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginLeft="16dp"
+                             android:layout_marginTop="@dimen/base"
+                             android:text="&#45;&#45;" />
+
+                         <TextView
+                             android:id="@+id/tv_msg_time"
+                             style="@style/style_12sp_grayb3"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginLeft="16dp"
+                             android:layout_marginTop="4dp" />
+
+                         <TextView
+                             android:id="@+id/tv_msg_content"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginLeft="16dp"
+                             android:layout_marginTop="4dp"
+                             android:text=""
+                             android:textColor="@color/color_gray_7f"
+                             android:textSize="12sp" />
+
+                     </LinearLayout>
+                     &lt;!&ndash;侧滑显示区域&ndash;&gt;
+
+                     &lt;!&ndash; TODO侧滑右边内容  <ImageView
+                            android:id="@+id/iv_delete"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/orange"
+                            android:scaleType="center"
+                            android:src="@drawable/icon_delete_white"/>&ndash;&gt;
+
+                     &lt;!&ndash;  </com.mcxtzhang.swipemenulib.SwipeMenuLayout>&ndash;&gt;
+
+                 </LinearLayout>
+             </LinearLayout>
+             &lt;!&ndash;侧滑显示区域&ndash;&gt;
+             <ImageView
+                 android:id="@+id/id_tv_delete"
+                 android:layout_width="100dp"
+                 android:layout_height="match_parent"
+                 android:layout_gravity="center_vertical"
+                 android:background="@color/orange"
+                 android:scaleType="center"
+                 android:src="@drawable/delete_white"/>
+         </com.mcxtzhang.swipemenulib.SwipeMenuLayout>
+     </LinearLayout>
+</LinearLayout>-->

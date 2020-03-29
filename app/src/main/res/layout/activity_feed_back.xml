@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.proton.carepatchtemp.viewmodel.managecenter.FeedBackViewModel"/>
+
+        <variable
+            name="viewClickListener"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="@color/color_main_bg"
+                  android:orientation="vertical"
+                  tools:context="com.proton.carepatchtemp.activity.managecenter.FeedBackActivity">
+
+        <include layout="@layout/include_top_navigation"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="#fff"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                style="@style/style_16sp_gray33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="@string/string_to_protontek"/>
+
+            <TextView
+                style="@style/style_14sp_gray7f"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/string_my_suggestions_tip"/>
+        </LinearLayout>
+        <!--吐槽点-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/white"
+            android:divider="@drawable/divider_item_layout_5dp"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <LinearLayout
+                android:id="@+id/id_lay_beauty"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height"
+                android:gravity="center_vertical"
+                android:onClick="@{(view)->viewClickListener.onClick(view)}"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <TextView
+                    style="@style/style_14sp_gray7f"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:stateListAnimator="@animator/selector_animator"
+                    android:text="@={viewModel.feedNoBeautyStr}"/>
+
+                <ImageView
+                    android:id="@+id/id_iv_no_beauty"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/icon_rb_unchecked"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/id_lay_app_bug"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height"
+                android:gravity="center_vertical"
+                android:onClick="@{(view)->viewClickListener.onClick(view)}"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <TextView
+                    style="@style/style_14sp_gray7f"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:stateListAnimator="@animator/selector_animator"
+                    android:text="@={viewModel.feedAppHaveBug}"/>
+
+                <ImageView
+                    android:id="@+id/id_iv_have_bug"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/icon_rb_unchecked"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/id_lay_unsatisfy_product"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height"
+                android:gravity="center_vertical"
+                android:onClick="@{(view)->viewClickListener.onClick(view)}"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <TextView
+                    style="@style/style_14sp_gray7f"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:stateListAnimator="@animator/selector_animator"
+                    android:text="@={viewModel.feedUnsatisfyProduct}"/>
+
+                <ImageView
+                    android:id="@+id/id_iv_unsatisfy_product"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/icon_rb_unchecked"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="149dp"
+            android:layout_marginTop="8dp"
+            android:background="#fff"
+            android:gravity="start"
+            android:hint="@string/string_feedback_tip"
+            android:padding="16dp"
+            android:text="@={viewModel.feedBackStr}"
+            android:textSize="14sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/bt_send_suggestion"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:background="@color/color_blue_30"
+            android:onClick="@{()->viewModel.sendFeedBackStr()}"
+            android:text="@string/string_send"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"/>
+    </LinearLayout>
+</layout>

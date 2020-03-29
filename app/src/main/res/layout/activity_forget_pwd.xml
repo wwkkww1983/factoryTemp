@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.proton.carepatchtemp.viewmodel.user.LoginViewModel" />
+
+        <variable
+            name="viewClickListener"
+            type="android.view.View.OnClickListener" />
+
+        <import type="android.view.View" />
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="isFromAccountAndSafeAct"
+            type="Boolean" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/id_include_top_nva"
+            layout="@layout/include_top_navigation" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/id_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:layout_width="209dp"
+                    android:layout_height="63dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/icon_logo_proton" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="27dp"
+                    android:gravity="center_horizontal"
+                    android:lineSpacingExtra="3dp"
+                    android:text="@string/string_findpwd_filltip"
+                    android:textColor="#7f7f7f"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    style="@style/style_16sp_gray33"
+                    android:layout_width="295dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/pd20"
+                    android:text="@string/string_mobile" />
+
+                <RelativeLayout
+                    android:layout_width="295dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/id_input_phone"
+                        style="@style/EditStyle2"
+                        android:enabled="@{isFromAccountAndSafeAct?false:true}"
+                        android:hint="@string/string_input_your_phone"
+                        android:inputType="number"
+                        android:maxLength="11"
+                        android:maxLines="1"
+                        android:text="@={viewModel.phoneNum}"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/id_clear_phone"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_alignParentRight="true"
+                        android:onClick="@{v->viewModel.clearPhoneNum()}"
+                        android:padding="8dp"
+                        android:src="@drawable/icon_clear_text"
+                        android:visibility="@{TextUtils.isEmpty(viewModel.phoneNum)||!viewModel.isCanEditPhone||isFromAccountAndSafeAct?View.GONE:View.VISIBLE}" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    style="@style/style_16sp_gray33"
+                    android:layout_width="295dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"
+                    android:text="验证码"
+                    android:visibility="@{viewModel.isVerifyCodeLogin?View.VISIBLE:View.GONE}" />
+
+                <RelativeLayout
+                    android:layout_width="295dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="@{viewModel.isVerifyCodeLogin?View.VISIBLE:View.GONE}">
+
+                    <EditText
+                        android:id="@+id/et_verification_code"
+                        style="@style/EditStyle2"
+                        android:hint="@string/string_input_code"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:maxLines="1"
+                        android:text="@={viewModel.codeNum}"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/id_clear_verify_code"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_toLeftOf="@+id/id_send_code"
+                        android:onClick="@{v->viewModel.clearCodeNum()}"
+                        android:padding="8dp"
+                        android:src="@drawable/icon_clear_text"
+                        android:visibility="@{TextUtils.isEmpty(viewModel.codeNum)?View.GONE:View.VISIBLE}" />
+
+                    <TextView
+                        android:id="@+id/id_send_code"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginEnd="0dp"
+                        android:background="@{viewModel.isCanSendCode &amp;&amp;viewModel.leftTimes==0 ?@drawable/btn_verification_blue_bg:@drawable/btn_verification_gray_bg}"
+                        android:enabled="@{viewModel.isCanSendCode}"
+                        android:gravity="center"
+                        android:onClick="@{()->viewModel.sendForgetPwdCode()}"
+                        android:text='@{viewModel.sendCodeStr}'
+                        android:textColor="#fff"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    style="@style/style_16sp_gray33"
+                    android:layout_width="295dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/string_new_password" />
+
+                <RelativeLayout
+                    android:layout_width="295dp"
+                    android:layout_height="34dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/et_new_pwd"
+                        style="@style/EditStyle2"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:hint="@string/string_input_password"
+                        android:inputType="textPassword"
+                        android:maxLength="16"
+                        android:maxLines="1"
+                        android:text="@={viewModel.pwdNum}"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/id_clear_password"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_toLeftOf="@+id/id_display_password"
+                        android:onClick="@{v->viewModel.clearPwdNum()}"
+                        android:padding="8dp"
+                        android:src="@drawable/icon_clear_text"
+                        android:visibility="@{TextUtils.isEmpty(viewModel.pwdNum)?View.GONE:View.VISIBLE}" />
+
+                    <ImageButton
+                        android:id="@+id/id_display_password"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@null"
+                        android:onClick="@{view->viewClickListener.onClick(view)}"
+                        android:src="@drawable/hide" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="295dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:text="密码长度为6-16位，需包含数字、字母、符号中至少2种元素"
+                    android:textColor="#AEAEAE"
+                    android:textSize="12sp" />
+
+                <Space
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <!--完成-->
+                <Button
+                    android:id="@+id/id_btn_complete"
+                    android:layout_width="220dp"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@{viewModel.checkCanResetPwd(viewModel.phoneNum,viewModel.codeNum,viewModel.pwdNum)?@drawable/main_gradient_radius:@drawable/gray_23_radius}"
+                    android:clickable="@{viewModel.checkCanResetPwd(viewModel.phoneNum,viewModel.codeNum,viewModel.pwdNum)}"
+                    android:onClick="@{view->viewClickListener.onClick(view)}"
+                    android:text="@string/string_reset_pwd"
+                    android:textColor="@{viewModel.checkCanResetPwd(viewModel.phoneNum,viewModel.codeNum,viewModel.pwdNum)?@color/white:@color/color_gray_b2}"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

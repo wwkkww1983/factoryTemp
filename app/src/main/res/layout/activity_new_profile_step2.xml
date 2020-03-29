@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.proton.carepatchtemp.viewmodel.AddProfileViewModel"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="@color/color_main_bg"
+                  android:orientation="vertical"
+                  tools:context="com.proton.carepatchtemp.activity.user.NewProfileStep2Activity">
+
+        <include layout="@layout/include_gray_top_navigation"/>
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            xmlns:fresco="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/id_sdv_profile_addavator"
+            android:layout_width="112dp"
+            android:layout_height="112dp"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="36dp"
+            fresco:actualImageScaleType="centerInside"
+            fresco:placeholderImage="@drawable/add_photo_bitmap"
+            fresco:placeholderImageScaleType="centerInside"
+            fresco:roundAsCircle="true"
+            fresco:roundingBorderColor="@android:color/white"
+            fresco:roundingBorderWidth="0dp"/>
+        <!--android:imageURI="@={viewModel.picUriStr}"-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="20dp"
+            android:text="@string/string_update_babypic"
+            android:textColor="@color/color_gray_7f"
+            android:textSize="40sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
+            android:onClick="@{()->viewModel.finishAddProfile()}"
+            android:text="@string/string_next"
+            android:textColor="#0095e4"
+            android:textSize="16sp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_horizontal|bottom">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:button="@drawable/selector_rb_addprofile"
+                    android:checked="@{viewModel.stepNum==1?true:false}"/>
+
+                <RadioButton
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:button="@drawable/selector_rb_addprofile"
+                    android:checked="@{viewModel.stepNum==2?true:false}"/>
+
+                <RadioButton
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:button="@drawable/selector_rb_addprofile"
+                    android:checked="@{viewModel.stepNum==3?true:false}"/>
+            </RadioGroup>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

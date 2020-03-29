@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical"
+                  tools:context="com.proton.carepatchtemp.activity.measure.NurseSuggestBaseInfoActivity">
+
+        <include
+            android:id="@+id/id_include_top"
+            layout="@layout/include_top_navigation"/>
+
+        <ScrollView
+            android:id="@+id/id_loading_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_main_bg"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingBottom="11dp"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="11dp">
+
+                    <TextView
+                        style="@style/style_16sp_blue30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/string_body_temp"/>
+                    <!--基本信息体温数字-->
+                    <TextView
+                        android:id="@+id/id_tv_body_temp"
+                        style="@style/style_16sp_gray33"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="15dp"
+                        android:paddingTop="17dp"
+                        android:text="--"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_gray_d4"/>
+
+                    <TextView
+                        style="@style/style_16sp_blue30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/string_is_have_fever"/>
+                    <!--是否有发热-->
+                    <RadioGroup
+                        android:id="@+id/id_rg_isHaveFever"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="21dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/id_rb_isFever"
+                            style="@style/style_rb_managecenter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/selector_rb_tempchoose"
+                            android:drawablePadding="8dp"
+                            android:text="@string/string_yes"/>
+
+                        <RadioButton
+                            android:id="@+id/id_rb_noFever"
+                            style="@style/style_rb_managecenter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="98dp"
+                            android:checked="true"
+                            android:drawableLeft="@drawable/selector_rb_tempchoose"
+                            android:drawablePadding="8dp"
+                            android:text="@string/string_false"/>
+                    </RadioGroup>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@color/color_gray_d4"/>
+
+                    <TextView
+                        style="@style/style_16sp_blue30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/string_is_have_vaccin"/>
+                    <!--是否有疫苗接种-->
+                    <RadioGroup
+                        android:id="@+id/id_rg_isHaveVaccin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="21dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/id_rb_isVaccin"
+                            style="@style/style_rb_managecenter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/selector_rb_tempchoose"
+                            android:drawablePadding="8dp"
+                            android:text="@string/string_yes"/>
+
+                        <RadioButton
+                            android:id="@+id/id_rb_noVaccin"
+                            style="@style/style_rb_managecenter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="98dp"
+                            android:checked="true"
+                            android:drawableLeft="@drawable/selector_rb_tempchoose"
+                            android:drawablePadding="8dp"
+                            android:text="@string/string_false"/>
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingBottom="19dp"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="15dp">
+                    <!--宝宝症状-->
+                    <TextView
+                        style="@style/style_16sp_blue30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/string_baby_sympton"/>
+
+                    <com.zhy.view.flowlayout.TagFlowLayout xmlns:zhy="http://schemas.android.com/apk/res-auto"
+                                                           android:id="@+id/id_tagflow_babycondition"
+                                                           android:layout_width="match_parent"
+                                                           android:layout_height="wrap_content"
+                                                           android:layout_marginTop="16dp"
+                                                           zhy:max_select="-1"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginTop="14dp"
+                    android:text="@string/string_inputbaseinfo_tip"
+                    android:textColor="#b0b0b0"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

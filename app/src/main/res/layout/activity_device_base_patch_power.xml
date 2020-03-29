@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/id_include_top"
+            layout="@layout/include_top_navigation"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/id_top_tips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/id_reset_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="38dp"
+                    android:text="@string/string_patch_power"
+                    android:textColor="@color/color_blue_30"
+                    android:textSize="26sp"/>
+
+                <TextView
+                    style="@style/style_16sp_gray33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/string_patch_orangeLight"
+                    android:textColor="@color/color_blue_30"
+                    android:textSize="18sp"/>
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/id_sdv_patchPower"
+                    android:layout_width="250dp"
+                    android:layout_height="124dp"
+                    android:layout_marginTop="65dp"
+                    android:src="@drawable/gif_patch_power"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/id_tv_light_notShining"
+                    style="@style/style_14sp_blue30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/string_light_notShining"/>
+
+                <TextView
+                    style="@style/style_14sp_gray33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="@dimen/pd30"
+                    android:layout_marginRight="@dimen/pd30"
+                    android:text="@string/string_only_docker_can_use"/>
+
+                <Button
+                    android:id="@+id/id_btn_close_advertise"
+                    style="@style/MyBtnStyle"
+                    android:layout_marginBottom="26dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="19dp"
+                    android:background="@drawable/shape_radius20_blue30_fill"
+                    android:visibility="gone"
+                    android:text="@string/string_close_advertise"/>
+                <Button
+                    android:id="@+id/id_btn_connect_wifi"
+                    style="@style/MyBtnStyle"
+                    android:layout_marginBottom="26dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="19dp"
+                    android:background="@drawable/shape_radius20_blue30_fill"
+                    android:text="@string/string_next"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

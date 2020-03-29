@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="@color/color_main_bg"
+                  android:orientation="vertical"
+                  tools:context="com.proton.carepatchtemp.activity.report.ReportDetailActivity">
+
+        <include
+            android:id="@+id/id_include_top"
+            layout="@layout/include_top_navigation"/>
+        <!--温度图表-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="195dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white">
+            <!--图表-->
+            <com.proton.carepatchtemp.view.TempCurveView2
+                android:id="@+id/id_curve_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+            <!--图表文字标识-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_temp"
+                    android:layout_width="10dp"
+                    android:layout_height="21dp"
+                    android:layout_marginLeft="16dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_highest_report"/>
+                <!--TODO 温度值颜色大小、单位动态替换-->
+                <TextView
+                    android:id="@+id/tv_temp_highest_tip"
+                    style="@style/style_12sp_gray2a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@id/iv_temp"
+                    android:gravity="bottom"
+                    android:text="@string/string_highest_temp"/>
+
+                <TextView
+                    android:id="@+id/id_tv_highest_temp"
+                    style="@style/style_18sp_orange66"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tv_temp_highest_tip"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/tv_temp_highest_tip"
+                    android:text="--"/>
+
+                <TextView
+                    android:id="@+id/id_tv_temp_unit"
+                    style="@style/style_10sp_gray2a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tv_temp_highest_tip"
+                    android:layout_toRightOf="@id/id_tv_highest_temp"
+                    android:text="--"/>
+
+                <ImageView
+                    android:id="@+id/id_iv_chart_rotate"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentRight="true"
+                    android:padding="8dp"
+                    android:src="@drawable/icon_screen_rotation"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+                                                           xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                           android:id="@+id/id_refresh_layout"
+                                                           android:layout_width="match_parent"
+                                                           android:layout_height="match_parent"
+                                                           android:layout_marginTop="11dp"
+                                                           app:srlEnableLoadmore="false"
+                                                           app:srlEnableRefresh="true">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!--随手记录-->
+                    <LinearLayout
+                        android:id="@+id/frl_add_note"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/btn_height"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/id_tv_addnotes"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:text="@string/string_note"
+                            android:textColor="#0095e4"
+                            android:textSize="16sp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|right"
+                            android:layout_marginRight="16dp"
+                            android:src="@drawable/icon_blue_rightarrow"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_blue_0095"/>
+                    <!--分割线-->
+                    <!--  <View
+                          android:layout_width="match_parent"
+                          android:layout_height="1dp"
+                          android:background="@drawable/shape_dash_blue16"/>-->
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/id_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none"/>
+                    <!--贴士-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/white"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/id_tv_note_tip"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/btn_height"
+                            android:layout_gravity="center"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="16dp"
+                            android:text="@string/string_note_tip"
+                            android:textColor="#0095e4"
+                            android:textSize="16sp"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/color_blue_0095"/>
+                        <!--友情提示文案-->
+                        <TextView
+                            android:id="@+id/id_tv_note_tip_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="8dp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingTop="8dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </LinearLayout>
+</layout>

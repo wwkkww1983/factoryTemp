@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/id_include_top"
+            layout="@layout/include_top_navigation"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/id_iv_update_pic"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="70dp"
+                    android:src="@drawable/img_carepatch_common"/>
+
+                <TextView
+                    android:id="@+id/id_update_status"
+                    style="@style/style_15sp_gray33"
+                    android:layout_width="255dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="50dp"
+                    android:text="@string/string_update_firware_fail"/>
+
+                <TextView
+                    style="@style/style_15sp_gray33"
+                    android:layout_width="255dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/string_update_starton"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    style="@style/style_15sp_gray33"
+                    android:layout_width="255dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:visibility="gone"
+                    android:text="@string/string_update_power"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    style="@style/style_15sp_gray33"
+                    android:layout_width="255dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/string_update_near_device"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    style="@style/style_15sp_gray33"
+                    android:layout_width="255dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/string_please_keep_net_ok"
+                    android:textSize="13sp"/>
+
+                <com.proton.carepatchtemp.view.StateButton
+                    android:id="@+id/id_retry"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/string_retry"
+                    android:textColor="@color/color_main"
+                    android:textSize="14sp"
+                    app:normalStrokeColor="@color/color_main"
+                    app:normalStrokeWidth="1dp"
+                    app:round="true"/>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

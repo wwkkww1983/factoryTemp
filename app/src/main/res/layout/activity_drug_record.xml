@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="@color/color_main_bg"
+                  android:orientation="vertical"
+                  tools:context="com.proton.carepatchtemp.activity.measure.DrugRecordActivity">
+
+        <include
+            android:id="@+id/id_include_top"
+            layout="@layout/include_top_navigation"/>
+
+        <LinearLayout
+            android:id="@+id/id_loading_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/id_include_record"
+                layout="@layout/include_refresh_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/id_btn_add"
+                style="@style/style_17sp_whiteff"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="25dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/shape_radius5dp_blue30_fill"
+                android:text="@string/string_add"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

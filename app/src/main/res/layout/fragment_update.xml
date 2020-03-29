@@ -1,0 +1,109 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#6000"
+                android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:tag="beta_title"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="16sp"/>
+
+            <Button
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_gravity="right|top"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@drawable/close_x_white"
+                android:tag="beta_cancel_button"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/update_header"/>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/update_round_white_bg"
+            android:orientation="vertical">
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:layout_marginTop="@dimen/activity_vertical_margin"-->
+            <!--android:text="更新内容"-->
+            <!--android:textColor="#333333"-->
+            <!--android:textSize="14sp"/>-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:layout_marginTop="16dp"
+                android:lineSpacingExtra="1.5dp"
+                android:paddingLeft="@dimen/base"
+                android:paddingRight="@dimen/base"
+                android:scrollbars="vertical"
+                android:tag="beta_upgrade_info"
+                android:text=""
+                android:textColor="#333333"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:layout_marginTop="16dp"
+                android:lineSpacingExtra="1.5dp"
+                android:maxLines="8"
+                android:paddingLeft="@dimen/base"
+                android:paddingRight="@dimen/base"
+                android:scrollbars="vertical"
+                android:tag="beta_upgrade_feature"
+                android:text=""
+                android:textColor="#969696"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@drawable/main_round"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:stateListAnimator="@animator/selector_animator"
+                android:tag="beta_confirm_button"
+                android:text="@string/string_update_now"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_main_bg"
+        android:orientation="vertical"
+        tools:context=".activity.user.AccountAndSafeActivity">
+
+        <include
+            android:id="@+id/id_include_top"
+            layout="@layout/include_top_navigation" />
+
+        <LinearLayout
+            android:id="@+id/id_account_safe"
+            android:layout_width="match_parent"
+            android:layout_height="71dp"
+            android:background="@drawable/btn_click_bg"
+            android:gravity="center_vertical"
+            android:onClick="@{onClick}"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/style_16sp_gray34"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="@string/string_set_login_password" />
+
+            <TextView
+                android:id="@+id/id_change_password"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:text="去修改"
+                android:textColor="@color/color_gray_b3"
+                android:textSize="@dimen/sp16" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginRight="22dp"
+                android:src="@drawable/icon_setarrow_right" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="7dp"
+            android:text="@string/string_third_bind_txt"
+            android:textColor="#5B5B5B"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:id="@+id/id_third_wechat"
+            android:layout_width="match_parent"
+            android:layout_height="71dp"
+            android:background="@drawable/btn_click_bg"
+            android:gravity="center_vertical"
+            android:onClick="@{onClick}"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginLeft="19dp"
+                android:src="@drawable/wechat_icon" />
+
+
+            <TextView
+                style="@style/style_16sp_gray34"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="@string/string_wechat" />
+
+            <TextView
+                android:id="@+id/id_wechat_bind_status"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:text="去绑定"
+                android:textColor="@color/color_blue_30"
+                android:textSize="@dimen/sp16" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginRight="22dp"
+                android:src="@drawable/icon_setarrow_right" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/id_third_aliPay"
+            android:layout_width="match_parent"
+            android:layout_height="71dp"
+            android:background="@drawable/btn_click_bg"
+            android:gravity="center_vertical"
+            android:onClick="@{onClick}"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginLeft="19dp"
+                android:src="@drawable/icon_alipay" />
+
+
+            <TextView
+                style="@style/style_16sp_gray34"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="@string/string_ali" />
+
+            <TextView
+                android:id="@+id/id_alipay_bind_status"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:text="去绑定"
+                android:textColor="@color/color_blue_30"
+                android:textSize="@dimen/sp16" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginRight="22dp"
+                android:src="@drawable/icon_setarrow_right" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

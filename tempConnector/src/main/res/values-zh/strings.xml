@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="connector_fireware_not_exist">固件不存在</string>
+    <string name="connector_please_open_bluetooth">请打开蓝牙</string>
+    <string name="connector_connect_fail">连接设备失败</string>
+    <string name="connector_device_disconnect">设备连接中断</string>
+    <string name="connector_fireware_write_fail">固件包写入失败</string>
+    <string name="connector_reset_fail">重置设备失败</string>
+    <string name="string_battery_low_fifty">电量低于30%</string>
+</resources>

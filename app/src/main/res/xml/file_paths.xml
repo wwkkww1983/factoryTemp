@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-path
+        name="share_files_path"
+        path="Android/data/com.proton.carepatchtemp/"/>
+    <external-path
+        name="cache"
+        path="Android/data/com.proton.carepatchtemp/cache"/>
+    <external-path
+        name="share_files_path"
+        path="Android/data/com.proton.carepatchtemp.en/"/>
+    <external-path
+        name="cache"
+        path="Android/data/com.proton.carepatchtemp.en/cache"/>
+    <external-cache-path
+        name="root_cache"
+        path="."/>
+    <external-path
+        name="root_path"
+        path="."/>
+</paths>

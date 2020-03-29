@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="15dp"
+    android:background="@drawable/icon_profile_list_shadow"
+    android:paddingLeft="5dp"
+    android:paddingTop="20dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="15dp">
+
+    <TextView
+        android:id="@+id/id_calibration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:text="校准值：+0.05℃"
+        android:textColor="@color/color_main"
+        android:textSize="@dimen/sp18"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/id_device_type"
+        style="@style/style_9sp_gray33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="0204,"
+        app:layout_constraintLeft_toLeftOf="@+id/id_calibration"
+        app:layout_constraintTop_toBottomOf="@+id/id_calibration" />
+
+    <TextView
+        android:id="@+id/id_mac"
+        style="@style/style_9sp_gray33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/id_device_type"
+        app:layout_constraintLeft_toRightOf="@+id/id_device_type"
+        app:layout_constraintTop_toTopOf="@+id/id_device_type" />
+
+    <TextView
+        android:id="@+id/id_sn"
+        style="@style/style_9sp_gray33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="@+id/id_device_type"
+        app:layout_constraintTop_toBottomOf="@+id/id_device_type" />
+
+    <TextView
+        android:id="@+id/id_ver"
+        style="@style/style_9sp_gray33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/id_sn"
+        app:layout_constraintLeft_toRightOf="@+id/id_sn"
+        app:layout_constraintTop_toTopOf="@+id/id_sn" />
+
+    <TextView
+        android:id="@+id/id_additional_data1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:text="测温点1：37.01℃(槽37.05℃)"
+        android:textColor="@color/color_main"
+        android:textSize="10sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_ver" />
+
+    <TextView
+        android:id="@+id/id_additional_data2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="测温点2：39.01℃(槽39.03℃)"
+        android:textColor="@color/color_main"
+        android:textSize="10sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_ver" />
+
+    <TextView
+        android:id="@+id/id_calibrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/solid_main_bg"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingTop="8dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="8dp"
+        android:text="校准"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/id_not_calibrate"
+        app:layout_constraintRight_toLeftOf="@+id/id_not_calibrate"
+        app:layout_constraintTop_toTopOf="@+id/id_not_calibrate" />
+
+    <TextView
+        android:id="@+id/id_not_calibrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/stroke_main_bg"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingTop="8dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="8dp"
+        android:text="不校准"
+        android:textColor="@color/color_main"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

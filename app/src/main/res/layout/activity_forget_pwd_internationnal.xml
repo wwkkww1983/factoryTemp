@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.proton.carepatchtemp.viewmodel.user.InternationalLoginViewModel"/>
+
+        <variable
+            name="viewClickListener"
+            type="android.view.View.OnClickListener"/>
+
+        <import type="android.view.View"/>
+
+        <import type="android.text.TextUtils"/>
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/id_include_top_nva"
+            layout="@layout/include_top_navigation"/>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/id_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="209dp"
+                    android:layout_height="63dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/icon_logo_proton"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="27dp"
+                    android:gravity="center_horizontal"
+                    android:lineSpacingExtra="3dp"
+                    android:text="@string/string_findpwd_filltip"
+                    android:textColor="#7f7f7f"
+                    android:textSize="14sp"/>
+
+                <EditText
+                    android:id="@+id/id_et_email"
+                    style="@style/EditStyle"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="48dp"
+                    android:drawableLeft="@drawable/email"
+                    android:hint="@string/string_input_your_email"
+                    android:maxLines="1"
+                    android:text="@={viewModel.email}"
+                    android:textSize="14sp"/>
+
+                <EditText
+                    android:id="@+id/et_new_pwd"
+                    style="@style/EditStyle"
+                    android:layout_marginTop="18dp"
+                    android:drawableLeft="@drawable/pwd_img"
+                    android:hint="@string/string_input_your_new_pwssword"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:text="@={viewModel.pwdNum}"
+                    android:textSize="14sp"/>
+
+                <Space
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <!--重置密码-->
+                <Button
+                    android:id="@+id/id_btn_reset"
+                    android:layout_width="220dp"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/main_gradient_radius"
+                    android:onClick="@{()->viewModel.sendForgetPwdEmailCode(true)}"
+                    android:text="@string/string_reset_pwd"
+                    android:textColor="#fff"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

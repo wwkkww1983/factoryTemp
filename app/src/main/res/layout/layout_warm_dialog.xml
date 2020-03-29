@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/id_top_text"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#30b8ff"
+        android:gravity="center"
+        android:text="@string/string_warm_tips"
+        android:textColor="#fff"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/id_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:lineSpacingExtra="6dp"
+        android:textColor="#333"
+        android:textSize="14sp" />
+
+    <View
+        android:id="@+id/id_first_divider"
+        style="@style/DividerStyle"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/id_first_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/string_go_to_login"
+        android:textColor="#30b8ff"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        />
+
+
+    <View style="@style/DividerStyle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/id_confirm_text"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/string_confirm"
+            android:textColor="#30b8ff"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/divider" />
+
+
+        <TextView
+            android:id="@+id/id_cancel_text"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/string_cancel"
+            android:textColor="#30b8ff"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

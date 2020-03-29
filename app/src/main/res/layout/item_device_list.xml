@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mcxtzhang.swipemenulib.SwipeMenuLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/id_swipeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    app:ios="false"
+    app:leftSwipe="true"
+    app:swipeEnable="false">
+    <!--内容区域-->
+    <LinearLayout
+        android:id="@+id/id_lay_p245content"
+        android:layout_width="match_parent"
+        android:layout_height="97dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp"
+            android:paddingRight="30dp">
+            <!--
+              普通版: img_carepatch_common
+              专业版: img_carepatch_professional
+              简装版: img_carepatch_simple
+            -->
+            <ImageView
+                android:id="@+id/id_iv_devicePic"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:maxHeight="51dp"
+                android:maxWidth="62dp"/>
+
+            <!--   android:maxHeight="62dp"
+               android:maxWidth="73dp"-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:orientation="vertical">
+                <!--设备名称-->
+                <!--  卡帕奇体温贴-普通版-->
+                <TextView
+                    android:id="@+id/id_tv_deviceName"
+                    style="@style/style_16sp_blue30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="--"/>
+
+                <TextView
+                    android:id="@+id/id_device_mac"
+                    style="@style/style_12sp_gray97"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="--"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <!--是否需要升级图标-->
+            <ImageView
+                android:id="@+id/id_iv_isNeedUpdate"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:src="@drawable/shape_count_bg"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:layout_width="8dp"
+                android:layout_height="12dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/icon_gray_right_arrow"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/id_tv_delete"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="5dp"
+        android:background="@color/orange"
+        android:scaleType="center"
+        android:src="@drawable/delete_white"/>
+</com.mcxtzhang.swipemenulib.SwipeMenuLayout>

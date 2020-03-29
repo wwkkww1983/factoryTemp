@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.proton.carepatchtemp.viewmodel.AddProfileViewModel"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="@color/color_main_bg"
+                  android:orientation="vertical"
+                  tools:context="com.proton.carepatchtemp.activity.user.NewProfileStep1Activity">
+
+        <include
+            android:id="@+id/id_include_top"
+            layout="@layout/include_gray_top_navigation"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="10dp"
+            android:text="@string/string_tellme_about_baby"
+            android:textColor="#55beef"
+            android:textSize="40sp"/>
+
+        <TextView
+            style="@style/style_14sp_gray7f"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="27dp"
+            android:gravity="center_horizontal"
+            android:text="@string/string_isshow_me"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center_horizontal|bottom"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/id_iv_head"
+                    android:layout_width="20dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/user_img"/>
+
+                <EditText
+                    android:id="@+id/id_et_profilea_addname"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/drawable_edit_b3_graymainbg"
+                    android:gravity="center"
+                    android:hint="@string/string_his_name"
+                    android:maxLength="15"
+                    android:maxLines="1"
+                    android:padding="3dp"
+                    android:singleLine="true"
+                    android:text="@={viewModel.name}"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/id_rg_profile_choosesex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/id_rb_profile_boy"
+                    style="@style/style_rb_managecenter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={viewModel.isBoy}"
+                    android:drawablePadding="8dp"
+                    android:drawableStart="@drawable/selector_rb_tempchoose"
+                    android:text="@string/string_boy"/>
+
+                <RadioButton
+                    android:id="@+id/id_rb_profile_girl"
+                    style="@style/style_rb_managecenter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="45dp"
+                    android:checked="@={!viewModel.isBoy}"
+                    android:drawableLeft="@drawable/selector_rb_tempchoose"
+                    android:drawablePadding="8dp"
+                    android:text="@string/string_girl"/>
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:gravity="center_horizontal|bottom"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/age_img"/>
+
+                <TextView
+                    android:id="@+id/id_et_profile_addbirthdate"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/drawable_edit_b3_graymainbg"
+                    android:gravity="center_horizontal"
+                    android:hint="@string/string_birth_date"
+                    android:maxLines="1"
+                    android:onClick="@{()->viewModel.chooseBirthday()}"
+                    android:padding="3dp"
+                    android:text="@={viewModel.birthday}"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="35dp"
+            android:onClick="@{()->viewModel.goToAddAvater()}"
+            android:padding="3dp"
+            android:text="@string/string_next"
+            android:textColor="#0095e4"
+            android:textSize="16sp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_horizontal|bottom">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:button="@drawable/selector_rb_addprofile"
+                    android:checked="@{viewModel.stepNum==1?true:false}"/>
+
+                <RadioButton
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:button="@drawable/selector_rb_addprofile"
+                    android:checked="@{viewModel.stepNum==2?true:false}"/>
+
+                <RadioButton
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:button="@drawable/selector_rb_addprofile"
+                    android:checked="@{viewModel.stepNum==3?true:false}"/>
+            </RadioGroup>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

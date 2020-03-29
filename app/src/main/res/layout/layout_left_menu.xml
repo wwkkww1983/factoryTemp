@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.proton.carepatchtemp.BuildConfig"/>
+
+        <import type="android.view.View"/>
+    </data>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        android:clickable="true"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/id_profile_img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="35dp"
+                app:actualImageScaleType="centerCrop"
+                app:placeholderImage="@drawable/icon_default_profile"
+                app:placeholderImageScaleType="centerCrop"
+                app:roundAsCircle="true"
+                app:roundingBorderColor="@android:color/white"
+                app:roundingBorderWidth="4dp"/>
+
+            <LinearLayout
+                android:id="@+id/id_set_network"
+                android:layout_width="wrap_content"
+                android:layout_height="31dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/drawable_white_bg_with_circle"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="19dp"
+                    android:src="@drawable/icon_set_network"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/string_base_connect_wifi"
+                    android:textColor="#fff"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <com.proton.carepatchtemp.view.LeftMenuItemView
+                    android:id="@+id/id_menu_measure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    app:left_menu_normal_img="@drawable/icon_left_menu_measure_normal"
+                    app:left_menu_select_img="@drawable/icon_left_menu_measure_selected"
+                    app:left_menu_text="@string/string_measure"/>
+
+                <com.proton.carepatchtemp.view.LeftMenuItemView
+                    android:id="@+id/id_menu_report"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    app:left_menu_normal_img="@drawable/icon_left_menu_report_normal"
+                    app:left_menu_select_img="@drawable/icon_left_menu_report_select"
+                    app:left_menu_text="@string/string_measure_report"/>
+
+                <com.proton.carepatchtemp.view.LeftMenuItemView
+                    android:id="@+id/id_menu_tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:visibility="@{BuildConfig.IS_INTERNAL ? View.GONE : View.VISIBLE}"
+                    app:left_menu_normal_img="@drawable/icon_left_menu_doctor_normal"
+                    app:left_menu_select_img="@drawable/icon_left_menu_doctor_select"
+                    app:left_menu_text="@string/string_healthy_tips"/>
+
+                <!--我的档案-->
+                <!--TODO 1.5消息中心放在设置里-->
+                <com.proton.carepatchtemp.view.LeftMenuItemView
+                    android:id="@+id/id_menu_msg_center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    app:left_menu_normal_img="@drawable/icon_left_menu_msg_normal"
+                    app:left_menu_select_img="@drawable/icon_left_menu_msg_select"
+                    app:left_menu_text="@string/string_message_center"/>
+
+                <!--我的档案-->
+                <com.proton.carepatchtemp.view.LeftMenuItemView
+                    android:id="@+id/id_menu_myprofile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_weight="1"
+                    app:left_menu_normal_img="@drawable/icon_left_menu_myprofile_normal"
+                    app:left_menu_select_img="@drawable/icon_left_menu_myprofile_selected"
+                    app:left_menu_text="@string/string_profile_manage"/>
+                <!--设备管理-->
+                <com.proton.carepatchtemp.view.LeftMenuItemView
+                    android:id="@+id/id_menu_devicemanage_center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    app:left_menu_normal_img="@drawable/icon_left_menu_devicemanage_selected_normal"
+                    app:left_menu_select_img="@drawable/icon_left_menu_devicemanage_selected_selected"
+                    app:left_menu_text="@string/string_bluetooth_device_manage"/>
+
+                <com.proton.carepatchtemp.view.LeftMenuItemView
+                    android:id="@+id/id_menu_manager_center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    app:left_menu_normal_img="@drawable/icon_left_menu_manager_normal"
+                    app:left_menu_select_img="@drawable/icon_left_menu_manager_select"
+                    app:left_menu_text="@string/string_setting_title"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

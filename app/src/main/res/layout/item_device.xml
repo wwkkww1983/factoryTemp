@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/id_rootview"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_marginBottom="14dp"
+    android:background="@drawable/drawable_device_bg"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/id_img"
+        android:layout_width="17dp"
+        android:layout_height="29dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="22dp"
+        android:src="@drawable/icon_temp_device"/>
+
+    <TextView
+        android:id="@+id/id_device_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@id/id_img"
+        android:text="@string/string_device_name"
+        android:textColor="#fff"
+        android:visibility="gone"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/id_signal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@id/id_img"
+        android:textColor="#fff"
+        android:textSize="13sp"/>
+
+    <TextView
+        android:id="@+id/id_device_mac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/id_signal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="1dp"
+        android:layout_toRightOf="@id/id_signal"
+        android:textColor="#fff"
+        android:textSize="12sp"/>
+
+    <Button
+        android:id="@+id/id_connect"
+        style="@style/MyBtnStyle"
+        android:layout_width="75dp"
+        android:layout_height="27dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/drawable_click_use_bg"
+        android:text="@string/string_click_use"
+        android:textColor="#fff"
+        android:textSize="10sp"/>
+
+</RelativeLayout>

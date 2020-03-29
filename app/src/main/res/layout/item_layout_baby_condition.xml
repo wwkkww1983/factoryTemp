@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/white"
+              android:orientation="vertical"
+              android:paddingBottom="15dp"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--症状标题-->
+        <TextView
+            android:id="@+id/id_tv_babyCondition"
+            style="@style/style_14sp_gray33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/id_tv_babyCondition"
+            android:background="#e0e0e0"/>
+    </RelativeLayout>
+    <!--症状详解-->
+    <TextView
+        android:id="@+id/id_tv_babyConditionDes"
+        style="@style/style_14sp_gray33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="17dp"
+        android:lineSpacingExtra="16dp"/>
+</LinearLayout>

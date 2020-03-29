@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="@color/color_main_bg"
+                  android:orientation="vertical"
+                  tools:context="com.proton.carepatchtemp.activity.report.ReportLandscapChartActivity">
+
+      <!--  <include
+            android:id="@+id/id_include_top"
+            layout="@layout/include_top_navigation"/>-->
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_bar_height"
+            android:background="#fff"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="#333333"
+                android:textSize="18sp"/>
+
+            <LinearLayout
+                android:id="@+id/lnl_temp_flag"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="top|right"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/shape_radius4_blue5bb"
+                android:orientation="horizontal"
+                android:padding="@dimen/base">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_device_lowtemp"/>
+
+                <TextView
+                    android:id="@+id/tv_high_or_low"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="@dimen/base"
+                    android:text="@string/string_highest_temp"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/id_tv_max_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="--.--"
+                    android:textColor="@color/color_blue_22b7"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/id_v_report_big_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/string_temp_C"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1">
+
+            <com.proton.carepatchtemp.view.TempCurveView2
+                android:id="@+id/id_curve_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+
+        </FrameLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="@color/color_main_bg"
+                  android:orientation="vertical"
+                  tools:context="com.proton.carepatchtemp.activity.report.AddReportNotesActivity">
+
+        <include
+            android:id="@+id/id_include_top"
+            layout="@layout/include_top_navigation"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <!--药物治疗-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="9dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="11dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:src="@drawable/img_notes_drug"/>
+
+                        <TextView
+                            style="@style/style_12sp_tv34"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:gravity="center"
+                            android:text="@string/string_drug_therapy"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2px"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="6dp"
+                            android:background="@color/color_gray_e0"/>
+                    </LinearLayout>
+
+                    <com.zhy.view.flowlayout.TagFlowLayout xmlns:zhy="http://schemas.android.com/apk/res-auto"
+                                                           android:id="@+id/id_flow_drug_treatment"
+                                                           android:layout_width="match_parent"
+                                                           android:layout_height="wrap_content"
+                                                           android:layout_marginTop="16dp"
+                                                           zhy:max_select="-1"/>
+                </LinearLayout>
+                <!--物理降温-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="9dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="11dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:src="@drawable/img_notes_physical_therapy"/>
+
+                        <TextView
+                            style="@style/style_12sp_tv34"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:gravity="center"
+                            android:text="@string/string_physical_therapy"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2px"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="6dp"
+                            android:background="@color/color_gray_e0"/>
+                    </LinearLayout>
+
+                    <com.zhy.view.flowlayout.TagFlowLayout xmlns:zhy="http://schemas.android.com/apk/res-auto"
+                                                           android:id="@+id/id_flow_physical_treatment"
+                                                           android:layout_width="match_parent"
+                                                           android:layout_height="wrap_content"
+                                                           android:layout_marginTop="16dp"
+                                                           zhy:max_select="-1"/>
+                </LinearLayout>
+                <!--宝宝状态-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="9dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="11dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:src="@drawable/img_notes_physical_condition"/>
+
+                        <TextView
+                            style="@style/style_12sp_tv34"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:gravity="center"
+                            android:text="@string/string_babyCondition"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2px"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="6dp"
+                            android:background="@color/color_gray_e0"/>
+                    </LinearLayout>
+
+                    <com.zhy.view.flowlayout.TagFlowLayout xmlns:zhy="http://schemas.android.com/apk/res-auto"
+                                                           android:id="@+id/id_flow_babyCondition"
+                                                           android:layout_width="match_parent"
+                                                           android:layout_height="wrap_content"
+                                                           android:layout_marginTop="16dp"
+                                                           zhy:max_select="-1"/>
+                </LinearLayout>
+                <!--备注-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="9dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingLeft="11dp"
+                    android:paddingRight="11dp">
+
+                    <LinearLayout
+                        android:id="@+id/id_lay_addRemark"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="14dp"
+                        android:paddingTop="15dp">
+
+                        <ImageView
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:src="@drawable/img_notes_remark"/>
+
+                        <TextView
+                            style="@style/style_12sp_tv34"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:text="@string/string_remark"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+
+                        <ImageView
+                            android:layout_width="7dp"
+                            android:layout_height="11dp"
+                            android:layout_gravity="right|center_vertical"
+                            android:src="@drawable/icon_gray_right_arrow"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/id_tv_remark"
+                        style="@style/style_14sp_gray33"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="8dp"
+                        android:visibility="gone"/>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

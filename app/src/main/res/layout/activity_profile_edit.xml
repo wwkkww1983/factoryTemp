@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.proton.carepatchtemp.BuildConfig" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_main_bg"
+        android:orientation="vertical"
+        tools:context="com.proton.carepatchtemp.activity.profile.ProfileEditActivity">
+
+        <include
+            android:id="@+id/id_include_top"
+            layout="@layout/include_top_navigation" />
+
+        <LinearLayout
+            android:id="@+id/id_lay_profile_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/btn_click_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:stateListAnimator="@animator/selector_animator">
+
+            <TextView
+                style="@style/style_15sp_gray33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/string_avatar" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/id_sdv_profile_avatar"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                fresco:actualImageScaleType="centerInside"
+                fresco:placeholderImage="@drawable/icon_default_profile"
+                fresco:placeholderImageScaleType="centerCrop"
+                fresco:roundAsCircle="true" />
+
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="13dp"
+                android:layout_marginLeft="@dimen/base"
+                android:src="@drawable/icon_gray_right_arrow" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/id_lay_profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:stateListAnimator="@animator/selector_animator">
+
+            <TextView
+                style="@style/style_15sp_gray33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/string_real_name" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/id_tv_real_name"
+                style="@style/style_15sp_b2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--" />
+
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="13dp"
+                android:layout_marginLeft="@dimen/base"
+                android:src="@drawable/icon_gray_right_arrow" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/id_lay_profile_sex"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="1dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:stateListAnimator="@animator/selector_animator">
+
+            <TextView
+                style="@style/style_15sp_gray33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/string_sex" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/id_tv_sex"
+                style="@style/style_15sp_b2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--" />
+
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="13dp"
+                android:layout_marginLeft="@dimen/base"
+                android:src="@drawable/icon_gray_right_arrow" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/id_lay_profile_birthday"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="1dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:stateListAnimator="@animator/selector_animator">
+
+            <TextView
+                style="@style/style_15sp_gray33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/string_birthday_tip" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/id_tv_birthday"
+                style="@style/style_15sp_b2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--" />
+
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="13dp"
+                android:layout_marginLeft="@dimen/base"
+                android:src="@drawable/icon_gray_right_arrow" />
+        </LinearLayout>
+        <!--档案编码-->
+        <LinearLayout
+            android:id="@+id/id_lay_profile_code"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:stateListAnimator="@animator/selector_animator"
+            android:visibility="@{BuildConfig.IS_INTERNAL ? View.GONE : View.VISIBLE}">
+
+            <TextView
+                style="@style/style_15sp_gray33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/string_profile_codeid" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/id_tv_profile_code"
+                style="@style/style_15sp_b2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="13dp"
+                android:layout_marginLeft="@dimen/base"
+                android:src="@drawable/icon_gray_right_arrow" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_profile_wechat_intro"
+            style="@style/style_12sp_grayb3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:lineSpacingExtra="5dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/id_wechat_share_profilecode"
+            android:visibility="gone" />
+    </LinearLayout>
+</layout>

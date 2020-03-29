@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/white"
+              android:maxHeight="94dp"
+              android:orientation="vertical">
+
+    <com.mcxtzhang.swipemenulib.SwipeMenuLayout
+        android:id="@+id/id_swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ios="false"
+        app:leftSwipe="true"
+        app:swipeEnable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="3dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="3dp">
+
+            <ImageView
+                android:id="@+id/id_iv_note_type"
+                android:layout_width="17dp"
+                android:layout_height="17dp"/>
+            <!--记录内容-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/id_tv_note_time"
+                    style="@style/style_10sp_grayb3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--"/>
+
+                <TextView
+                    android:id="@+id/id_tv_note_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="--"
+                    android:textColor="#414243"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+        </LinearLayout>
+        <!--侧滑显示区域-->
+        <ImageView
+            android:id="@+id/id_iv_delete_note"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:background="@color/orange"
+            android:scaleType="centerInside"
+            android:src="@drawable/delete_white"/>
+    </com.mcxtzhang.swipemenulib.SwipeMenuLayout>
+
+</LinearLayout>

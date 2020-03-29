@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="#fff"
+              android:gravity="center_horizontal"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/id_top_text"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#30b8ff"
+        android:gravity="center"
+        android:text="@string/string_warm_tips"
+        android:textColor="#fff"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/id_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:gravity="center"
+        android:lineSpacingExtra="6dp"
+        android:textColor="#333"
+        android:textSize="14sp"/>
+
+    <View
+        style="@style/DividerStyle"/>
+
+    <TextView
+        android:id="@+id/id_confirm_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/string_confirm"
+        android:textColor="#30b8ff"
+        android:textSize="14sp"/>
+
+    <View
+        style="@style/DividerStyle"/>
+
+    <TextView
+        android:id="@+id/id_cancel_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/string_cancel"
+        android:textColor="#30b8ff"
+        android:textSize="14sp"/>
+
+</LinearLayout>

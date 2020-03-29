@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "915782849953",
+    "project_id": "carepatch-181505"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915782849953:android:63260a620d6826cb",
+        "android_client_info": {
+          "package_name": "com.proton.carepatchtemp.international"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "915782849953-dvko1hvf40v70hg6gp637qf2pfrcgd12.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "915782849953-6is03blbee8ct421ir3bnhrvsbdrass5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.proton.carepatchtemp.international",
+            "certificate_hash": "b0c2a72c50a06f31e9c3f0dff522749936504174"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAi2RHxUkUfgii1M3EUD706BTDQ4X6D834"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

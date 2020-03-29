@@ -1,0 +1,3 @@
+[submodule "ble"]
+	path = ble
+	url = git@gitee.com:wms1993/ble.git

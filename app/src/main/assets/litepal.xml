@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <!--
+        Define the database name of your application.
+        By default each database name should be end with .db.
+        If you didn't name your database end with .db,
+        LitePal would plus the suffix automaticly for you.
+        For example:
+        <dbname value="demo" ></dbname>
+    -->
+    <dbname value="carepatchtemp" />
+
+    <!--
+        Define the version of your database. Each time you want
+        to upgrade your database, the version tag would helps.
+        Modify the models you defined in the mapping tag, and just
+        make the version value plus one, the upgrade of database
+        will be processed automaticly without concern.
+            For example:
+        <version value="1" ></version>
+    -->
+    <version value="62" />
+
+    <!--
+        Define your models in the list with mapping tag, LitePal will
+        create tables for each mapping class. The supported fields
+        defined in models will be mapped into columns.
+        For example:
+        <list>
+            <mapping class="com.test.model.Reader"></mapping>
+            <mapping class="com.test.model.Magazine"></mapping>
+        </list>
+    -->
+    <list>
+        <mapping class="com.proton.carepatchtemp.net.bean.ProfileBean" />
+        <mapping class="com.proton.carepatchtemp.bean.ReportBean" />
+        <mapping class="com.proton.carepatchtemp.net.bean.UpdateFirmwareBean" />
+        <mapping class="com.proton.carepatchtemp.net.bean.DeviceBean" />
+        <mapping class="com.proton.carepatchtemp.bean.AlarmBean" />
+        <mapping class="com.proton.carepatchtemp.bean.LogBean"/>
+        <mapping class="com.proton.carepatchtemp.factory.bean.CalibrateBean"/>
+    </list>
+</litepal>

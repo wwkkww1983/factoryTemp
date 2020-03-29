@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#fff"
+    android:gravity="center|top"
+    android:orientation="vertical"
+    android:paddingTop="150dp"
+    android:visibility="visible">
+
+    <ImageView
+        android:layout_width="125dp"
+        android:layout_height="101dp"
+        android:src="@drawable/icon_unlogin"/>
+
+    <TextView
+        android:id="@+id/id_not_login_tips"
+        style="@style/style_18sp_gray33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="--"/>
+
+    <TextView
+        android:id="@+id/id_go_to_login"
+        style="@style/style_18sp_gray33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="--"/>
+
+</LinearLayout>

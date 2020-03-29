@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="@color/color_main_bg"
+                  android:orientation="vertical"
+                  tools:context="com.proton.carepatchtemp.activity.report.SomOneMeasureReportActivity">
+
+        <include
+            android:id="@+id/id_include_top_tab"
+            layout="@layout/include_top_tab_navigation"/>
+
+        <com.proton.carepatchtemp.view.NoScrollViewPager
+            android:id="@+id/id_report_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.proton.carepatchtemp.view.NoScrollViewPager>
+    </LinearLayout>
+</layout>

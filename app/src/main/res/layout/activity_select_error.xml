@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:con1text=".factory.activity.SelectErrorActivity">
+
+    <include layout="@layout/include_top_navigation" />
+
+    <TextView
+        style="@style/style_14sp_gray33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="温度点1误差" />
+
+    <com.zyyoona7.wheel.WheelView
+        android:id="@+id/wheelview1"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        style="@style/style_14sp_gray33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="温度点2误差" />
+
+    <com.zyyoona7.wheel.WheelView
+        android:id="@+id/wheelview2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="5dp" />
+
+
+</LinearLayout>
+
+</layout>

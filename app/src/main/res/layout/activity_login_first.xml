@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.proton.carepatchtemp.BuildConfig" />
+
+        <variable
+            name="viewModel"
+            type="com.proton.carepatchtemp.viewmodel.user.LoginViewModel" />
+
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener" />
+
+        <import type="android.view.View" />
+
+        <import type="android.text.TextUtils" />
+
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fillViewport="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/login_logo"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/id_verify_code_login"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_marginTop="54dp"
+                android:layout_marginRight="@dimen/pd30"
+                android:onClick="@{onClick}"
+                app:layout_constraintRight_toLeftOf="@+id/divider_line"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <CheckBox
+                    android:id="@+id/ck_verify_code_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:checked="@{viewModel.isVerifyCodeLogin}"
+                    android:clickable="false"
+                    android:text="验证码登录"
+                    android:textColor="@color/login_way_color_selcet"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider_line"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@color/divider"
+                app:layout_constraintBottom_toBottomOf="@+id/id_verify_code_login"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/id_verify_code_login" />
+
+            <LinearLayout
+                android:id="@+id/id_password_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/pd30"
+                android:onClick="@{onClick}"
+                app:layout_constraintLeft_toRightOf="@+id/divider_line"
+                app:layout_constraintTop_toTopOf="@+id/id_verify_code_login">
+
+                <CheckBox
+                    android:id="@+id/ck_password_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:checked="@{!viewModel.isVerifyCodeLogin}"
+                    android:clickable="false"
+                    android:text="密码登录"
+                    android:textColor="@color/login_way_color_selcet"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="295dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="60dp"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="@+id/id_verify_code_login"
+                app:layout_constraintTop_toBottomOf="@+id/id_verify_code_login">
+
+                <TextView
+                    style="@style/style_16sp_gray33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_mobile" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/id_input_phone"
+                        style="@style/EditStyle2"
+                        android:hint="@string/string_input_your_phone"
+                        android:inputType="number"
+                        android:maxLength="11"
+                        android:maxLines="1"
+                        android:text="@={viewModel.phoneNum}"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/id_clear_phone"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_alignParentRight="true"
+                        android:onClick="@{v->viewModel.clearPhoneNum()}"
+                        android:padding="8dp"
+                        android:src="@drawable/icon_clear_text"
+                        android:visibility="@{TextUtils.isEmpty(viewModel.phoneNum)?View.GONE:View.VISIBLE}" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    style="@style/style_16sp_gray33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/string_password"
+                    android:visibility="@{viewModel.isVerifyCodeLogin?View.GONE:View.VISIBLE}" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="@{viewModel.isVerifyCodeLogin?View.GONE:View.VISIBLE}">
+
+                    <EditText
+                        android:id="@+id/id_pwd"
+                        style="@style/EditStyle2"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:hint="@string/string_input_password"
+                        android:inputType="textPassword"
+                        android:maxLength="16"
+                        android:maxLines="1"
+                        android:text="@={viewModel.pwdNum}"
+                        android:textSize="14sp"
+                        android:visibility="@{viewModel.isVerifyCodeLogin?View.GONE:View.VISIBLE}" />
+
+                    <ImageView
+                        android:id="@+id/id_clear_password"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_toLeftOf="@+id/id_display_password"
+                        android:onClick="@{v->viewModel.clearPwdNum()}"
+                        android:padding="8dp"
+                        android:src="@drawable/icon_clear_text"
+                        android:visibility="@{TextUtils.isEmpty(viewModel.pwdNum)?View.GONE:View.VISIBLE}" />
+
+                    <ImageButton
+                        android:id="@+id/id_display_password"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@null"
+                        android:onClick="@{onClick}"
+                        android:src="@drawable/hide" />
+                </RelativeLayout>
+
+                <TextView
+                    style="@style/style_16sp_gray33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="验证码"
+                    android:visibility="@{viewModel.isVerifyCodeLogin?View.VISIBLE:View.GONE}" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="@{viewModel.isVerifyCodeLogin?View.VISIBLE:View.GONE}">
+
+                    <EditText
+                        android:id="@+id/et_verification_code"
+                        style="@style/EditStyle2"
+                        android:hint="@string/string_input_code"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:maxLines="1"
+                        android:text="@={viewModel.codeNum}"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/id_clear_verify_code"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_toLeftOf="@+id/id_send_code"
+                        android:onClick="@{v->viewModel.clearCodeNum()}"
+                        android:padding="8dp"
+                        android:src="@drawable/icon_clear_text"
+                        android:visibility="@{TextUtils.isEmpty(viewModel.codeNum)?View.GONE:View.VISIBLE}" />
+
+                    <TextView
+                        android:id="@+id/id_send_code"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@{viewModel.isCanSendCode &amp;&amp;viewModel.leftTimes==0 ?@drawable/btn_verification_blue_bg:@drawable/btn_verification_gray_bg}"
+                        android:enabled="@{viewModel.isCanSendCode}"
+                        android:gravity="center"
+                        android:onClick="@{()->viewModel.fetchCaptchaLoginCode()}"
+                        android:text='@{viewModel.sendCodeStr}'
+                        android:textColor="#fff"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pd11"
+                    android:text="未注册手机号验证后自动注册"
+                    android:textColor="#5D97F1"
+                    android:textSize="12sp"
+                    android:visibility="@{viewModel.isVerifyCodeLogin?View.VISIBLE:View.GONE}" />
+
+                <TextView
+                    android:id="@+id/id_tv_forgetpwd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:clickable="true"
+                    android:onClick="@{onClick}"
+                    android:paddingTop="@dimen/pd20"
+                    android:paddingBottom="@dimen/pd20"
+                    android:text="@string/string_forgot_pwd"
+                    android:textColor="@drawable/text_color_selector"
+                    android:textSize="14sp"
+                    android:visibility="@{viewModel.isVerifyCodeLogin?View.GONE:View.VISIBLE}" />
+
+                <Button
+                    android:id="@+id/btn_regist_or_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@{viewModel.checkCanLogin(viewModel.phoneNum,viewModel.pwdNum,viewModel.codeNum)?@drawable/main_gradient_radius:@drawable/gray_23_radius}"
+                    android:enabled="@{viewModel.checkCanLogin(viewModel.phoneNum,viewModel.pwdNum,viewModel.codeNum)}"
+                    android:gravity="center"
+                    android:onClick="@{onClick}"
+                    android:text="@{viewModel.isVerifyCodeLogin?@string/string_regist_or_login:@string/string_login}"
+                    android:textColor="@{viewModel.checkCanLogin(viewModel.phoneNum,viewModel.pwdNum,viewModel.codeNum)?@color/white:@color/color_gray_b2}"
+                    android:textSize="@dimen/sp16" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/string_login_warm"
+                        android:textColor="#7f7f7f"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{()->viewModel.showPrivicy()}"
+                        android:text="@string/string_privacy_policy"
+                        android:textColor="@color/color_main"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/string_and"
+                        android:textColor="#7f7f7f"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{()->viewModel.showUserAgreement()}"
+                        android:text="@string/string_services_agreement"
+                        android:textColor="@color/color_main"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:lines="1"
+                        android:text="····································"
+                        android:textColor="#30B8FF" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/pd15"
+                        android:layout_marginRight="@dimen/pd15"
+                        android:text="@string/string_login_or"
+                        android:textColor="#30B8FF"
+                        android:textSize="@dimen/sp14" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:lines="1"
+                        android:text="····································"
+                        android:textColor="#30B8FF" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/id_wechat"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="@dimen/pd40"
+                        android:layout_weight="1"
+                        android:onClick="@{onClick}"
+                        android:src="@drawable/wechat_icon" />
+
+                    <ImageView
+                        android:id="@+id/id_alipay"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="@dimen/pd40"
+                        android:layout_weight="1"
+                        android:onClick="@{onClick}"
+                        android:src="@drawable/icon_alipay" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+</layout>
